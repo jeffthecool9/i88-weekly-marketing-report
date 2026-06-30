@@ -181,7 +181,7 @@
 
   .kpi-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
@@ -354,6 +354,10 @@
 
   .amount { font-weight: 700; color: var(--text); }
   .amount .rm { font-size: 9px; color: var(--muted); font-weight: 400; }
+
+  .register-val { color: var(--gold-light); }
+  .register-val.high { color: var(--green); }
+  .register-val.low { color: var(--red); }
 
   .status-badge {
     display: inline-block;
@@ -773,6 +777,10 @@
   }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
   @media (max-width: 900px) {
     .kpi-grid { grid-template-columns: repeat(2, 1fr); }
     .issue-card { grid-template-columns: 1fr; }
@@ -836,10 +844,16 @@
         <p class="kpi-note">Target: 2.5x minimum</p>
       </div>
       <div class="kpi-card">
-        <div class="kpi-number-bg">347</div>
-        <p class="kpi-label">Total Registrations</p>
-        <p class="kpi-value">347</p>
-        <p class="kpi-note">RM24.26 cost per registration</p>
+        <div class="kpi-number-bg">250</div>
+        <p class="kpi-label">Total Registers</p>
+        <p class="kpi-value">250</p>
+        <p class="kpi-note">72% of messaging conversations converted</p>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number-bg">34</div>
+        <p class="kpi-label">Cost / Register</p>
+        <p class="kpi-value highlight">RM 33.68</p>
+        <p class="kpi-note">Blended across all campaigns</p>
       </div>
     </div>
   </section>
@@ -860,7 +874,8 @@
             <th>Status</th>
             <th>Spend</th>
             <th>Results</th>
-            <th>Cost/Result</th>
+            <th>Register</th>
+            <th>Cost/Register</th>
             <th>ROAS</th>
             <th>vs Last Week</th>
           </tr>
@@ -874,7 +889,8 @@
             <td><span class="status-badge status-scaling">Scaling</span></td>
             <td><span class="amount"><span class="rm">RM </span>2,840</span></td>
             <td><span class="amount">126</span></td>
-            <td><span class="rm">RM </span>22.54</td>
+            <td><span class="amount register-val">92</span></td>
+            <td><span class="rm">RM </span>30.87</td>
             <td><span class="roas-badge roas-high">3.12x</span></td>
             <td><span class="change-up">+18%</span></td>
           </tr>
@@ -886,7 +902,8 @@
             <td><span class="status-badge status-active">Active</span></td>
             <td><span class="amount"><span class="rm">RM </span>1,960</span></td>
             <td><span class="amount">72</span></td>
-            <td><span class="rm">RM </span>27.22</td>
+            <td><span class="amount register-val">51</span></td>
+            <td><span class="rm">RM </span>38.43</td>
             <td><span class="roas-badge roas-mid">2.08x</span></td>
             <td><span class="change-up">+5%</span></td>
           </tr>
@@ -898,7 +915,8 @@
             <td><span class="status-badge status-active">Active</span></td>
             <td><span class="amount"><span class="rm">RM </span>1,450</span></td>
             <td><span class="amount">58</span></td>
-            <td><span class="rm">RM </span>25.00</td>
+            <td><span class="amount register-val">44</span></td>
+            <td><span class="rm">RM </span>32.95</td>
             <td><span class="roas-badge roas-mid">2.34x</span></td>
             <td><span class="change-down">-8%</span></td>
           </tr>
@@ -910,7 +928,8 @@
             <td><span class="status-badge status-testing">Testing</span></td>
             <td><span class="amount"><span class="rm">RM </span>980</span></td>
             <td><span class="amount">31</span></td>
-            <td><span class="rm">RM </span>31.61</td>
+            <td><span class="amount register-val">19</span></td>
+            <td><span class="rm">RM </span>51.58</td>
             <td><span class="roas-badge roas-mid">1.87x</span></td>
             <td><span class="change-flat">New</span></td>
           </tr>
@@ -922,7 +941,8 @@
             <td><span class="status-badge status-paused">Paused</span></td>
             <td><span class="amount"><span class="rm">RM </span>720</span></td>
             <td><span class="amount">18</span></td>
-            <td><span class="rm">RM </span>40.00</td>
+            <td><span class="amount register-val low">9</span></td>
+            <td><span class="rm">RM </span>80.00</td>
             <td><span class="roas-badge roas-low">0.74x</span></td>
             <td><span class="change-down">-34%</span></td>
           </tr>
@@ -934,7 +954,8 @@
             <td><span class="status-badge status-active">Active</span></td>
             <td><span class="amount"><span class="rm">RM </span>470</span></td>
             <td><span class="amount">42</span></td>
-            <td><span class="rm">RM </span>11.19</td>
+            <td><span class="amount register-val high">35</span></td>
+            <td><span class="rm">RM </span>13.43</td>
             <td><span class="roas-badge roas-high">3.65x</span></td>
             <td><span class="change-up">+22%</span></td>
           </tr>
@@ -944,7 +965,8 @@
             <td colspan="2" class="total-label">Weekly Total</td>
             <td class="total-amount">RM 8,420</td>
             <td class="total-amount">347</td>
-            <td colspan="3" style="color:var(--dim);font-size:11px;">Avg RM24.26 / result · Blended 2.41x ROAS</td>
+            <td class="total-amount">250</td>
+            <td colspan="3" style="color:var(--dim);font-size:11px;">Avg RM33.68 / register · 72% conv. rate · Blended 2.41x ROAS</td>
           </tr>
         </tfoot>
       </table>
