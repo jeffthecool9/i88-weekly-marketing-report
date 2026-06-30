@@ -416,6 +416,184 @@
     color: var(--gold-light);
   }
 
+  /* ── CREATIVE ASSETS ── */
+  .creative-section {
+    padding: 0 0 72px;
+  }
+
+  .creative-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .creative-card {
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s ease;
+  }
+
+  .creative-card:hover { background: #1a1a1a; }
+
+  .creative-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: #000;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .creative-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .creative-thumb.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.04), rgba(201,168,76,0.04) 10px, rgba(201,168,76,0.01) 10px, rgba(201,168,76,0.01) 20px);
+    border-bottom: 1px dashed var(--border-bright);
+  }
+
+  .creative-thumb-placeholder-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.8;
+  }
+
+  .creative-ad-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(7,7,7,0.85);
+    border: 1px solid var(--border-bright);
+    color: var(--gold);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    padding: 4px 10px;
+    border-radius: 2px;
+    backdrop-filter: blur(4px);
+  }
+
+  .creative-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .creative-status-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 2px;
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+  }
+
+  .creative-status-badge.rejected {
+    background: rgba(248,113,113,0.18);
+    color: var(--red);
+    border: 1px solid rgba(248,113,113,0.4);
+  }
+
+  .creative-status-badge.pending {
+    background: rgba(251,191,36,0.18);
+    color: var(--amber);
+    border: 1px solid rgba(251,191,36,0.4);
+  }
+
+  .creative-status-badge.awaiting {
+    background: rgba(85,85,85,0.3);
+    color: var(--dim);
+    border: 1px solid rgba(136,136,136,0.4);
+  }
+
+  .creative-body {
+    padding: 18px 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .creative-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .creative-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .creative-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border-radius: 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.18);
+    color: var(--gold-light);
+  }
+
+  .creative-tag.country {
+    background: rgba(96,165,250,0.08);
+    border-color: rgba(96,165,250,0.22);
+    color: var(--blue);
+  }
+
+  .creative-desc {
+    font-size: 12px;
+    color: var(--dim);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .creative-desc strong { color: var(--text); font-weight: 500; }
+
+  .creative-footer-note {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   /* ── ISSUES & SOLUTIONS ── */
   .issues-section {
     padding: 0 0 72px;
@@ -783,6 +961,7 @@
 
   @media (max-width: 900px) {
     .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .creative-grid { grid-template-columns: 1fr; }
     .issue-card { grid-template-columns: 1fr; }
     .issue-side.problem { border-right: none; border-bottom: 1px solid var(--border); }
     .funnel-flow { flex-direction: column; }
@@ -975,6 +1154,93 @@
     <p style="font-size:10px;color:var(--muted);margin-top:10px;font-family:'Space Mono',monospace;letter-spacing:0.08em;">
       ROAS thresholds: <span style="color:var(--green)">High ≥ 3.0x</span> · <span style="color:var(--amber)">Mid 1.0–2.9x</span> · <span style="color:var(--red)">Low < 1.0x</span>
     </p>
+  </section>
+
+  <!-- CREATIVE ASSETS -->
+  <section class="creative-section reveal">
+    <div class="section-header">
+      <h2 class="section-title">Creative Assets</h2>
+      <div class="section-line"></div>
+      <span class="section-count">3 ADS · WORLD CUP 2026</span>
+    </div>
+
+    <div class="creative-grid">
+
+      <!-- Ad 2: Golden Boot Showdown -->
+      <div class="creative-card">
+        <div class="creative-thumb">
+          <img src="assets/ad-2-golden-boot-showdown.png" alt="i88 World Cup 2026 Event — Golden Boot Showdown">
+          <span class="creative-ad-number">AD 2</span>
+          <div class="creative-status">
+            <span class="creative-status-badge rejected">Rejected</span>
+            <span class="creative-status-badge pending">Reuploaded · Pending</span>
+          </div>
+        </div>
+        <div class="creative-body">
+          <h3 class="creative-title">WorldCup 2026 Event — Golden Boot Showdown</h3>
+          <div class="creative-meta-row">
+            <span class="creative-tag country">🇲🇾 Malaysia</span>
+            <span class="creative-tag">Sports Betting</span>
+            <span class="creative-tag">In-app Screenshot</span>
+          </div>
+          <p class="creative-desc">Live match odds + "Up to MYR 100,000 to be Won" — built for the World Cup creative refresh flagged in this week's Sports Betting solution. First submission was <strong>rejected</strong>, reuploaded and currently <strong>pending Meta review</strong>.</p>
+          <div class="creative-footer-note">
+            <span>Linked: MY — Sports Betting (BM)</span>
+            <span>9:16</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad 3: Ronaldinho Streetball Bonanza -->
+      <div class="creative-card">
+        <div class="creative-thumb">
+          <img src="assets/ad-3-ronaldinho-streetball.jpeg" alt="Register & Top Up — Ronaldinho's Streetball Bonanza 188 Free Spins">
+          <span class="creative-ad-number">AD 3</span>
+          <div class="creative-status">
+            <span class="creative-status-badge rejected">Rejected</span>
+            <span class="creative-status-badge pending">Reuploaded · Pending</span>
+          </div>
+        </div>
+        <div class="creative-body">
+          <h3 class="creative-title">Register & Top Up — Ronaldinho's Streetball Bonanza</h3>
+          <div class="creative-meta-row">
+            <span class="creative-tag country">🇲🇾 Malaysia</span>
+            <span class="creative-tag">Slots Promo</span>
+            <span class="creative-tag">188 Free Spins</span>
+          </div>
+          <p class="creative-desc">Register + min. <strong>MYR 50</strong> deposit unlocks 188 FS on a branded slot title. Feeds the top-performing Slots Promo campaign (3.12x ROAS, currently scaling). First submission was <strong>rejected</strong>, reuploaded and currently <strong>pending Meta review</strong>.</p>
+          <div class="creative-footer-note">
+            <span>Linked: MY — Slots Promo (BM)</span>
+            <span>3:4</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad 4: World Cup Jersey Giveaway -->
+      <div class="creative-card">
+        <div class="creative-thumb placeholder">
+          <span class="creative-ad-number">AD 4</span>
+          <div class="creative-status">
+            <span class="creative-status-badge awaiting">Awaiting Upload</span>
+          </div>
+          <p class="creative-thumb-placeholder-text">World Cup Jersey<br>Giveaway<br>— file pending —</p>
+        </div>
+        <div class="creative-body">
+          <h3 class="creative-title">World Cup Jersey Giveaway</h3>
+          <div class="creative-meta-row">
+            <span class="creative-tag country">🇲🇾 MY · 🇸🇬 SG</span>
+            <span class="creative-tag">Cross-Market</span>
+            <span class="creative-tag">EN + CN Variant</span>
+          </div>
+          <p class="creative-desc">6-jersey giveaway (Argentina, Spain, Portugal, Brazil, France, England) — min deposit <strong>SGD 100 / MYR 150</strong>, 1 entry per eligible match, 23–30 Jun 2026, 5 lucky winners. Spans both MY and SG audiences; serves as a shared retention hook across markets.</p>
+          <div class="creative-footer-note">
+            <span>Linked: MY — Sports Betting + SG markets</span>
+            <span>1:1</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- CHALLENGES & SOLUTIONS -->
@@ -1361,7 +1627,7 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  document.querySelectorAll('.issue-card, .optim-phase, .funnel-wrapper, .priority-grid').forEach((el, i) => {
+  document.querySelectorAll('.creative-card, .issue-card, .optim-phase, .funnel-wrapper, .priority-grid').forEach((el, i) => {
     el.classList.add('reveal');
     el.style.transitionDelay = `${i * 0.06}s`;
     observer.observe(el);
