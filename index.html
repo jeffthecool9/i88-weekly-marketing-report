@@ -6,26 +6,24 @@
 <title>i88 — Weekly Marketing Report</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Space+Mono:wght@400;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --bg: #0A0A0A;
-    --surface: #0f0f0f;
-    --card: #141414;
-    --border: rgba(201, 168, 76, 0.15);
-    --border-bright: rgba(201, 168, 76, 0.4);
-    --gold: #C9A84C;
-    --gold-light: #E2C87A;
-    --gold-dim: rgba(201, 168, 76, 0.6);
-    --text: #FAFAFA;
-    --muted: #555;
-    --dim: #888;
-    --green: #4ADE80;
-    --red: #F87171;
-    --amber: #FBBF24;
-    --blue: #60A5FA;
+    --card: #161616;
+    --border: rgba(201, 168, 76, 0.2);
+    --border-bright: rgba(201, 168, 76, 0.5);
+    --gold: #D9B85C;
+    --gold-light: #EBD391;
+    --text: #FFFFFF;
+    --muted: #ABABAB;
+    --dim: #D2D2D2;
+    --green: #5FE092;
+    --red: #FF8178;
+    --amber: #FFC94A;
+    --blue: #7CB4FF;
   }
 
   html { scroll-behavior: smooth; }
@@ -34,19 +32,10 @@
     background: var(--bg);
     color: var(--text);
     font-family: 'Jost', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 16px;
     min-height: 100vh;
     overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.025;
-    pointer-events: none;
-    z-index: 9999;
   }
 
   .grid-bg {
@@ -69,20 +58,15 @@
   }
 
   /* ── HERO ── */
-  .hero {
-    padding: 80px 0 60px;
-    position: relative;
-  }
+  .hero { padding: 64px 0 48px; }
 
   .hero-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
+    font-size: 13px;
+    letter-spacing: 0.2em;
     color: var(--gold);
     text-transform: uppercase;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards 0.1s;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -98,53 +82,38 @@
 
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(44px, 6vw, 84px);
-    font-weight: 300;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.2s;
+    font-size: clamp(40px, 5.5vw, 72px);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
   }
 
-  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-title em { font-style: italic; color: var(--gold-light); font-weight: 400; }
 
   .hero-sub {
-    font-family: 'Jost', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 16px;
     color: var(--dim);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 16px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.35s;
+    margin-top: 12px;
   }
 
   .hero-divider {
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,0.1) 60%, transparent 100%);
-    margin: 40px 0;
-    opacity: 0;
-    animation: expandWidth 1s ease forwards 0.5s;
-    transform-origin: left;
+    background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,0.15) 60%, transparent 100%);
+    margin: 32px 0;
   }
 
-  /* ── WEEK PERIOD ── */
   .week-block {
     display: flex;
     align-items: flex-end;
-    gap: 28px;
+    gap: 24px;
     flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.9s ease forwards 0.55s;
   }
 
   .week-label {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
+    font-size: 12px;
+    letter-spacing: 0.15em;
     color: var(--muted);
     text-transform: uppercase;
     margin-bottom: 6px;
@@ -152,32 +121,26 @@
 
   .week-value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 4vw, 52px);
+    font-size: clamp(28px, 3.5vw, 42px);
     font-weight: 600;
-    line-height: 1;
     color: var(--text);
-    letter-spacing: -0.02em;
   }
 
   .week-badge {
-    padding: 6px 14px;
+    padding: 7px 14px;
     border: 1px solid var(--border-bright);
-    border-radius: 2px;
+    border-radius: 3px;
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--gold);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     white-space: nowrap;
   }
 
   /* ── KPI CARDS ── */
-  .kpi-section {
-    padding: 28px 0 56px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.7s;
-  }
+  .kpi-section { padding: 24px 0 48px; }
 
   .kpi-grid {
     display: grid;
@@ -187,55 +150,20 @@
     border: 1px solid var(--border);
   }
 
-  .kpi-card {
-    background: var(--card);
-    padding: 24px 22px;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease;
-  }
-
-  .kpi-card:hover { background: #1a1a1a; }
-
-  .kpi-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .kpi-card:hover::after { transform: scaleX(1); }
-
-  .kpi-number-bg {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 72px;
-    font-weight: 700;
-    color: rgba(201,168,76,0.04);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-  }
+  .kpi-card { background: var(--card); padding: 22px 20px; }
 
   .kpi-label {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.22em;
+    font-size: 12px;
+    letter-spacing: 0.1em;
     color: var(--muted);
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .kpi-value {
     font-family: 'Space Mono', monospace;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--text);
     line-height: 1;
@@ -243,13 +171,11 @@
 
   .kpi-value.highlight { color: var(--gold-light); }
   .kpi-value.green { color: var(--green); }
-  .kpi-value.red { color: var(--red); }
 
   .kpi-note {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--dim);
     margin-top: 8px;
-    font-weight: 400;
   }
 
   /* ── SECTION HEADER ── */
@@ -257,103 +183,77 @@
     display: flex;
     align-items: baseline;
     gap: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
   }
 
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 600;
     color: var(--text);
-    white-space: nowrap;
   }
 
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-line { flex: 1; height: 1px; background: var(--border); min-width: 24px; }
 
   .section-count {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--muted);
-    letter-spacing: 0.15em;
-    white-space: nowrap;
+    letter-spacing: 0.1em;
   }
 
   /* ── TABLE ── */
-  .table-section {
-    padding-bottom: 72px;
-  }
+  .table-section { padding-bottom: 56px; }
 
-  .table-wrapper {
-    overflow-x: auto;
-    border: 1px solid var(--border);
-  }
+  .table-wrapper { overflow-x: auto; border: 1px solid var(--border); }
 
   table {
     width: 100%;
     border-collapse: collapse;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   thead th {
-    padding: 14px 18px;
+    padding: 14px 16px;
     text-align: left;
-    font-size: 9px;
-    letter-spacing: 0.22em;
+    font-size: 12px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--gold);
     background: #0c0c0c;
     border-bottom: 1px solid var(--border);
     white-space: nowrap;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   thead th:first-child { border-left: 3px solid var(--gold); }
 
-  tbody tr {
-    border-bottom: 1px solid rgba(201,168,76,0.06);
-    transition: background 0.2s ease;
-  }
+  tbody tr { border-bottom: 1px solid rgba(201,168,76,0.08); }
+  tbody tr:hover { background: rgba(201,168,76,0.04); }
 
-  tbody tr:hover { background: rgba(201,168,76,0.035); }
-
-  tbody td {
-    padding: 12px 18px;
-    color: var(--text);
-    vertical-align: middle;
-    white-space: nowrap;
-  }
-
-  tbody td:first-child {
-    border-left: 3px solid transparent;
-    transition: border-color 0.2s;
-  }
-
+  tbody td { padding: 13px 16px; color: var(--text); white-space: nowrap; }
+  tbody td:first-child { border-left: 3px solid transparent; }
   tbody tr:hover td:first-child { border-left-color: var(--gold); }
 
   .td-campaign {
     font-weight: 500;
     color: var(--text);
     font-family: 'Jost', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .td-sub {
-    font-size: 9px;
+    font-size: 12px;
     color: var(--muted);
-    letter-spacing: 0.08em;
     display: block;
     margin-top: 2px;
     font-family: 'Space Mono', monospace;
   }
 
   .amount { font-weight: 700; color: var(--text); }
-  .amount .rm { font-size: 9px; color: var(--muted); font-weight: 400; }
+  .amount .rm { font-size: 11px; color: var(--muted); font-weight: 400; }
 
   .register-val { color: var(--gold-light); }
   .register-val.high { color: var(--green); }
@@ -361,65 +261,56 @@
 
   .status-badge {
     display: inline-block;
-    padding: 3px 10px;
-    border-radius: 2px;
-    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.05em;
   }
 
-  .status-active { background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2); }
-  .status-paused { background: rgba(248,113,113,0.1); color: var(--red); border: 1px solid rgba(248,113,113,0.2); }
-  .status-testing { background: rgba(251,191,36,0.1); color: var(--amber); border: 1px solid rgba(251,191,36,0.2); }
-  .status-scaling { background: rgba(96,165,250,0.1); color: var(--blue); border: 1px solid rgba(96,165,250,0.2); }
+  .status-active  { background: rgba(95,224,146,0.14); color: var(--green); border: 1px solid rgba(95,224,146,0.3); }
+  .status-paused  { background: rgba(255,129,120,0.14); color: var(--red);  border: 1px solid rgba(255,129,120,0.3); }
+  .status-testing { background: rgba(255,201,74,0.14);  color: var(--amber); border: 1px solid rgba(255,201,74,0.3); }
+  .status-scaling { background: rgba(124,180,255,0.14); color: var(--blue); border: 1px solid rgba(124,180,255,0.3); }
 
   .roas-badge {
     display: inline-block;
-    padding: 3px 10px;
-    border-radius: 2px;
-    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 13px;
     font-weight: 700;
   }
 
-  .roas-high { background: rgba(74,222,128,0.1); color: var(--green); border: 1px solid rgba(74,222,128,0.2); }
-  .roas-mid  { background: rgba(251,191,36,0.08); color: var(--amber); border: 1px solid rgba(251,191,36,0.18); }
-  .roas-low  { background: rgba(248,113,113,0.08); color: var(--red); border: 1px solid rgba(248,113,113,0.18); }
+  .roas-high { background: rgba(95,224,146,0.14); color: var(--green); border: 1px solid rgba(95,224,146,0.3); }
+  .roas-mid  { background: rgba(255,201,74,0.12); color: var(--amber); border: 1px solid rgba(255,201,74,0.28); }
+  .roas-low  { background: rgba(255,129,120,0.12); color: var(--red); border: 1px solid rgba(255,129,120,0.28); }
   .roas-none { color: var(--muted); }
 
-  .change-up { color: var(--green); }
-  .change-down { color: var(--red); }
+  .change-up { color: var(--green); font-weight: 700; }
+  .change-down { color: var(--red); font-weight: 700; }
   .change-flat { color: var(--muted); }
 
-  tfoot tr {
-    background: #0c0c0c;
-    border-top: 1px solid var(--border-bright);
-  }
-
-  tfoot td {
-    padding: 14px 18px;
-    font-size: 11px;
-    color: var(--dim);
-    letter-spacing: 0.05em;
-  }
+  tfoot tr { background: #0c0c0c; border-top: 1px solid var(--border-bright); }
+  tfoot td { padding: 15px 16px; font-size: 13px; color: var(--dim); }
 
   tfoot td.total-label {
-    font-size: 9px;
-    letter-spacing: 0.25em;
+    font-size: 12px;
+    letter-spacing: 0.15em;
     color: var(--gold);
     text-transform: uppercase;
     font-weight: 700;
   }
 
-  tfoot td.total-amount {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--gold-light);
+  tfoot td.total-amount { font-size: 16px; font-weight: 700; color: var(--gold-light); }
+
+  .legend-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+    font-family: 'Space Mono', monospace;
   }
 
   /* ── CREATIVE ASSETS ── */
-  .creative-section {
-    padding: 0 0 72px;
-  }
+  .creative-section { padding: 0 0 56px; }
 
   .creative-grid {
     display: grid;
@@ -429,14 +320,7 @@
     border: 1px solid var(--border);
   }
 
-  .creative-card {
-    background: var(--card);
-    display: flex;
-    flex-direction: column;
-    transition: background 0.3s ease;
-  }
-
-  .creative-card:hover { background: #1a1a1a; }
+  .creative-card { background: var(--card); display: flex; flex-direction: column; }
 
   .creative-thumb {
     position: relative;
@@ -447,25 +331,19 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .creative-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .creative-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .creative-thumb.placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.04), rgba(201,168,76,0.04) 10px, rgba(201,168,76,0.01) 10px, rgba(201,168,76,0.01) 20px);
+    background: repeating-linear-gradient(135deg, rgba(201,168,76,0.05), rgba(201,168,76,0.05) 10px, rgba(201,168,76,0.01) 10px, rgba(201,168,76,0.01) 20px);
     border-bottom: 1px dashed var(--border-bright);
   }
 
   .creative-thumb-placeholder-text {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
+    font-size: 13px;
     color: var(--muted);
     text-transform: uppercase;
     text-align: center;
@@ -481,11 +359,9 @@
     border: 1px solid var(--border-bright);
     color: var(--gold);
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    padding: 4px 10px;
-    border-radius: 2px;
-    backdrop-filter: blur(4px);
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 3px;
   }
 
   .creative-status {
@@ -495,232 +371,131 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 4px;
+    gap: 5px;
   }
 
   .creative-status-badge {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.1em;
+    font-size: 11px;
     text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 2px;
-    backdrop-filter: blur(4px);
+    padding: 4px 9px;
+    border-radius: 3px;
     white-space: nowrap;
   }
 
-  .creative-status-badge.rejected {
-    background: rgba(248,113,113,0.18);
-    color: var(--red);
-    border: 1px solid rgba(248,113,113,0.4);
-  }
+  .creative-status-badge.rejected { background: rgba(255,129,120,0.22); color: var(--red); border: 1px solid rgba(255,129,120,0.5); }
+  .creative-status-badge.pending  { background: rgba(255,201,74,0.22); color: var(--amber); border: 1px solid rgba(255,201,74,0.5); }
+  .creative-status-badge.awaiting { background: rgba(171,171,171,0.18); color: var(--dim); border: 1px solid rgba(171,171,171,0.4); }
 
-  .creative-status-badge.pending {
-    background: rgba(251,191,36,0.18);
-    color: var(--amber);
-    border: 1px solid rgba(251,191,36,0.4);
-  }
-
-  .creative-status-badge.awaiting {
-    background: rgba(85,85,85,0.3);
-    color: var(--dim);
-    border: 1px solid rgba(136,136,136,0.4);
-  }
-
-  .creative-body {
-    padding: 18px 20px 22px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+  .creative-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
 
   .creative-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
     color: var(--text);
     line-height: 1.2;
     margin-bottom: 10px;
   }
 
-  .creative-meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 14px;
-  }
+  .creative-meta-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 
   .creative-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 3px 9px;
-    border-radius: 2px;
+    padding: 4px 9px;
+    border-radius: 3px;
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: rgba(201,168,76,0.06);
-    border: 1px solid rgba(201,168,76,0.18);
+    font-size: 11px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.25);
     color: var(--gold-light);
   }
 
-  .creative-tag.country {
-    background: rgba(96,165,250,0.08);
-    border-color: rgba(96,165,250,0.22);
-    color: var(--blue);
-  }
+  .creative-tag.country { background: rgba(124,180,255,0.1); border-color: rgba(124,180,255,0.3); color: var(--blue); }
 
-  .creative-desc {
-    font-size: 12px;
-    color: var(--dim);
-    line-height: 1.7;
-    font-weight: 300;
-    margin-bottom: 12px;
-  }
-
-  .creative-desc strong { color: var(--text); font-weight: 500; }
+  .creative-desc { font-size: 14px; color: var(--dim); line-height: 1.6; margin-bottom: 10px; }
+  .creative-desc strong { color: var(--text); font-weight: 600; }
 
   .creative-footer-note {
     margin-top: auto;
-    padding-top: 12px;
+    padding-top: 10px;
     border-top: 1px solid var(--border);
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     color: var(--muted);
-    letter-spacing: 0.05em;
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
-  /* ── ISSUES & SOLUTIONS ── */
-  .issues-section {
-    padding: 0 0 72px;
-  }
+  /* ── CHALLENGES & FIXES (simplified) ── */
+  .issues-section { padding: 0 0 56px; }
 
-  .issues-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1px;
-    background: var(--border);
+  .issues-list {
     border: 1px solid var(--border);
-  }
-
-  .issue-card {
     background: var(--card);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease;
   }
 
-  .issue-card:hover { background: #1a1a1a; }
-
-  .issue-side {
-    padding: 26px 26px;
-    position: relative;
+  .issue-row {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
   }
 
-  .issue-side.problem { border-right: 1px solid var(--border); }
-  .issue-side.solution { background: rgba(74,222,128,0.015); }
+  .issue-row:last-child { border-bottom: none; }
 
-  .issue-tag {
-    display: inline-flex;
+  .issue-row-head {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 3px 10px;
-    border-radius: 2px;
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+    gap: 14px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
   }
 
-  .issue-tag.risk { background: rgba(248,113,113,0.1); color: var(--red); border: 1px solid rgba(248,113,113,0.2); }
-  .issue-tag.fix  { background: rgba(74,222,128,0.08); color: var(--green); border: 1px solid rgba(74,222,128,0.2); }
-  .issue-tag.warn { background: rgba(251,191,36,0.1); color: var(--amber); border: 1px solid rgba(251,191,36,0.2); }
-
-  .issue-tag-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: currentColor;
-    animation: pulse-dot 2s ease infinite;
-  }
-
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .issue-title {
+  .issue-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 32px;
+  }
+
+  .issue-row-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 8px;
-    line-height: 1.2;
+    flex: 1;
   }
 
-  .issue-desc {
-    font-size: 12px;
-    color: var(--dim);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  .issue-desc strong { color: var(--text); font-weight: 500; }
-
-  .solution-steps {
-    list-style: none;
-    margin-top: 6px;
-  }
-
-  .solution-steps li {
-    position: relative;
-    padding-left: 18px;
-    font-size: 12px;
-    color: var(--dim);
-    line-height: 1.7;
-    margin-bottom: 4px;
-    font-weight: 300;
-  }
-
-  .solution-steps li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 8px;
-    width: 6px; height: 6px;
-    border: 1px solid var(--green);
-    background: rgba(74,222,128,0.15);
-    transform: rotate(45deg);
-  }
-
-  .solution-steps li strong { color: var(--text); font-weight: 500; }
-
-  .issue-impact {
-    margin-top: 10px;
-    padding: 7px 12px;
-    background: rgba(201,168,76,0.04);
-    border-left: 2px solid var(--gold);
+  .issue-tag {
+    padding: 4px 10px;
+    border-radius: 3px;
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 0.05em;
+    font-size: 11px;
+    text-transform: uppercase;
   }
 
-  /* ── OPTIMIZATION STRUCTURE ── */
-  .optim-section { padding: 0 0 72px; }
+  .issue-tag.risk { background: rgba(255,129,120,0.14); color: var(--red); border: 1px solid rgba(255,129,120,0.35); }
+  .issue-tag.warn { background: rgba(255,201,74,0.14); color: var(--amber); border: 1px solid rgba(255,201,74,0.35); }
+
+  .issue-line {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-left: 46px;
+    margin-bottom: 4px;
+  }
+
+  .issue-line .label { font-weight: 600; margin-right: 6px; }
+  .issue-line.problem { color: var(--dim); }
+  .issue-line.problem .label { color: var(--red); }
+  .issue-line.fix { color: var(--text); }
+  .issue-line.fix .label { color: var(--green); }
+  .issue-line strong { color: var(--gold-light); font-weight: 600; }
+
+  /* ── OPTIMIZATION PLAN (simplified) ── */
+  .optim-section { padding: 0 0 56px; }
 
   .optim-phase {
     border: 1px solid var(--border);
     border-bottom: none;
-    position: relative;
-    overflow: hidden;
   }
 
   .optim-phase:last-child { border-bottom: 1px solid var(--border); }
@@ -728,231 +503,144 @@
   .optim-phase-header {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 18px 26px;
+    gap: 18px;
+    padding: 16px 24px;
     background: #0c0c0c;
     border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
   }
 
   .phase-number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
-    color: rgba(201,168,76,0.15);
-    line-height: 1;
-    min-width: 44px;
+    color: var(--gold);
+    min-width: 40px;
   }
 
   .phase-info { flex: 1; }
 
   .phase-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--text);
-    line-height: 1;
-    margin-bottom: 4px;
   }
 
-  .phase-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
+  .phase-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
   .phase-timeline {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--gold);
-    letter-spacing: 0.1em;
-    padding: 3px 10px;
+    padding: 4px 10px;
     border: 1px solid var(--border-bright);
-    border-radius: 2px;
+    border-radius: 3px;
     white-space: nowrap;
   }
 
-  .optim-phase-body {
-    background: var(--card);
-    padding: 22px 26px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 16px;
-  }
+  .optim-phase-body { background: var(--card); padding: 18px 24px; }
 
-  .optim-item {
-    padding: 14px 16px;
-    background: rgba(201,168,76,0.02);
-    border: 1px solid rgba(201,168,76,0.07);
-    transition: border-color 0.3s ease, background 0.3s ease;
-  }
+  .phase-list { list-style: none; }
 
-  .optim-item:hover {
-    border-color: var(--border-bright);
-    background: rgba(201,168,76,0.04);
-  }
-
-  .optim-item-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .optim-item-text {
-    font-size: 12px;
+  .phase-list li {
+    position: relative;
+    padding: 8px 0 8px 20px;
+    font-size: 15px;
     color: var(--dim);
-    line-height: 1.7;
-    font-weight: 300;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(201,168,76,0.06);
   }
 
-  .optim-item-text strong { color: var(--text); font-weight: 500; }
+  .phase-list li:last-child { border-bottom: none; }
+
+  .phase-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .phase-list li strong { color: var(--text); font-weight: 600; }
 
   /* ── FUNNEL ── */
-  .funnel-section { padding: 0 0 72px; }
+  .funnel-section { padding: 0 0 56px; }
 
-  .funnel-wrapper {
-    border: 1px solid var(--border);
-    background: var(--card);
-    padding: 36px 26px;
-  }
+  .funnel-wrapper { border: 1px solid var(--border); background: var(--card); padding: 28px 24px; }
 
-  .funnel-flow {
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-  }
+  .funnel-flow { display: flex; align-items: stretch; gap: 0; }
 
   .funnel-stage {
     flex: 1;
     text-align: center;
-    padding: 18px 12px;
+    padding: 12px 12px;
     border-right: 1px solid var(--border);
-    transition: background 0.3s ease;
-    position: relative;
   }
 
   .funnel-stage:last-child { border-right: none; }
-  .funnel-stage:hover { background: rgba(201,168,76,0.03); }
-
-  .funnel-stage-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
-    font-weight: 700;
-    color: rgba(201,168,76,0.12);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
 
   .funnel-stage-name {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .funnel-stage-desc {
-    font-size: 11px;
-    color: var(--dim);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  /* ── PRIORITY MATRIX ── */
-  .priority-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    margin-top: 24px;
-  }
-
-  .priority-cell {
-    background: var(--card);
-    padding: 22px 18px;
-    text-align: center;
-    transition: background 0.3s ease;
-  }
-
-  .priority-cell:hover { background: #1a1a1a; }
-
-  .priority-cell-rank {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .funnel-stage-desc { font-size: 13px; color: var(--dim); line-height: 1.5; }
+
+  /* ── PRIORITY LIST ── */
+  .priority-list {
+    border: 1px solid var(--border);
+    background: var(--card);
+    margin-top: 20px;
+  }
+
+  .priority-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .priority-row:last-child { border-bottom: none; }
+
+  .priority-rank {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
     font-weight: 700;
     color: var(--gold);
-    line-height: 1;
-    margin-bottom: 6px;
+    min-width: 36px;
   }
 
-  .priority-cell-title {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    color: var(--text);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-
-  .priority-cell-desc {
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.5;
-    font-weight: 300;
-  }
+  .priority-text { font-size: 15px; color: var(--text); }
+  .priority-text strong { color: var(--gold-light); font-weight: 600; }
 
   /* ── FOOTNOTE ── */
   .footnote {
-    padding: 28px 0 56px;
+    padding: 24px 0 48px;
     border-top: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
   }
 
   .footnote-brand {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-size: 19px;
+    font-weight: 700;
     color: var(--gold);
   }
 
-  .footnote-text {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
+  .footnote-text { font-size: 13px; color: var(--muted); }
 
   /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(22px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes expandWidth {
-    from { opacity: 0; transform: scaleX(0); }
-    to   { opacity: 1; transform: scaleX(1); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1100px) {
@@ -962,21 +650,18 @@
   @media (max-width: 900px) {
     .kpi-grid { grid-template-columns: repeat(2, 1fr); }
     .creative-grid { grid-template-columns: 1fr; }
-    .issue-card { grid-template-columns: 1fr; }
-    .issue-side.problem { border-right: none; border-bottom: 1px solid var(--border); }
     .funnel-flow { flex-direction: column; }
-    .funnel-stage { border-right: none; border-bottom: 1px solid var(--border); }
+    .funnel-stage { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 8px; }
     .funnel-stage:last-child { border-bottom: none; }
-    .priority-grid { grid-template-columns: 1fr; }
+    .issue-line { margin-left: 0; }
   }
 
   @media (max-width: 600px) {
-    .container { padding: 0 20px; }
+    .container { padding: 0 18px; }
     .kpi-grid { grid-template-columns: 1fr 1fr; }
-    .hero { padding: 50px 0 36px; }
-    .footnote { flex-direction: column; }
-    .optim-phase-body { grid-template-columns: 1fr; }
-    .optim-phase-header { flex-wrap: wrap; gap: 10px; }
+    .hero { padding: 44px 0 32px; }
+    .footnote { flex-direction: column; align-items: flex-start; }
+    .priority-row { flex-wrap: wrap; }
   }
 </style>
 </head>
@@ -989,7 +674,7 @@
   <header class="hero">
     <p class="hero-eyebrow">i88 · Weekly Marketing Report</p>
     <h1 class="hero-title">Week 4<br><em>Performance Review</em></h1>
-    <p class="hero-sub">Facebook Ads · Campaign Analysis · Optimization Roadmap</p>
+    <p class="hero-sub">Facebook Ads Summary — MY & SG</p>
     <div class="hero-divider"></div>
 
     <div class="week-block">
@@ -1005,34 +690,29 @@
   <section class="kpi-section">
     <div class="kpi-grid">
       <div class="kpi-card">
-        <div class="kpi-number-bg">6</div>
         <p class="kpi-label">Active Campaigns</p>
         <p class="kpi-value highlight">6</p>
-        <p class="kpi-note">MY + SG markets combined</p>
+        <p class="kpi-note">MY + SG combined</p>
       </div>
       <div class="kpi-card">
-        <div class="kpi-number-bg">RM</div>
         <p class="kpi-label">Weekly Spend</p>
         <p class="kpi-value">RM 8,420</p>
         <p class="kpi-note">+12% vs last week</p>
       </div>
       <div class="kpi-card">
-        <div class="kpi-number-bg">2.4</div>
         <p class="kpi-label">Blended ROAS</p>
         <p class="kpi-value green">2.41x</p>
-        <p class="kpi-note">Target: 2.5x minimum</p>
+        <p class="kpi-note">Target: 2.5x</p>
       </div>
       <div class="kpi-card">
-        <div class="kpi-number-bg">250</div>
         <p class="kpi-label">Total Registers</p>
         <p class="kpi-value">250</p>
-        <p class="kpi-note">72% of messaging conversations converted</p>
+        <p class="kpi-note">72% conversion rate</p>
       </div>
       <div class="kpi-card">
-        <div class="kpi-number-bg">34</div>
         <p class="kpi-label">Cost / Register</p>
         <p class="kpi-value highlight">RM 33.68</p>
-        <p class="kpi-note">Blended across all campaigns</p>
+        <p class="kpi-note">Blended average</p>
       </div>
     </div>
   </section>
@@ -1052,7 +732,6 @@
             <th>Campaign</th>
             <th>Status</th>
             <th>Spend</th>
-            <th>Results</th>
             <th>Register</th>
             <th>Cost/Register</th>
             <th>ROAS</th>
@@ -1061,78 +740,54 @@
         </thead>
         <tbody>
           <tr>
-            <td>
-              <span class="td-campaign">MY — Slots Promo (BM)</span>
-              <span class="td-sub">Messaging · Lookalike 1%</span>
-            </td>
+            <td><span class="td-campaign">MY — Slots Promo</span><span class="td-sub">Lookalike 1%</span></td>
             <td><span class="status-badge status-scaling">Scaling</span></td>
             <td><span class="amount"><span class="rm">RM </span>2,840</span></td>
-            <td><span class="amount">126</span></td>
             <td><span class="amount register-val">92</span></td>
             <td><span class="rm">RM </span>30.87</td>
             <td><span class="roas-badge roas-high">3.12x</span></td>
             <td><span class="change-up">+18%</span></td>
           </tr>
           <tr>
-            <td>
-              <span class="td-campaign">MY — Live Casino (EN)</span>
-              <span class="td-sub">Messaging · Interest-based</span>
-            </td>
+            <td><span class="td-campaign">MY — Live Casino</span><span class="td-sub">Interest-based</span></td>
             <td><span class="status-badge status-active">Active</span></td>
             <td><span class="amount"><span class="rm">RM </span>1,960</span></td>
-            <td><span class="amount">72</span></td>
             <td><span class="amount register-val">51</span></td>
             <td><span class="rm">RM </span>38.43</td>
             <td><span class="roas-badge roas-mid">2.08x</span></td>
             <td><span class="change-up">+5%</span></td>
           </tr>
           <tr>
-            <td>
-              <span class="td-campaign">MY — Sports Betting (BM)</span>
-              <span class="td-sub">Messaging · Broad targeting</span>
-            </td>
+            <td><span class="td-campaign">MY — Sports Betting</span><span class="td-sub">Broad targeting</span></td>
             <td><span class="status-badge status-active">Active</span></td>
             <td><span class="amount"><span class="rm">RM </span>1,450</span></td>
-            <td><span class="amount">58</span></td>
             <td><span class="amount register-val">44</span></td>
             <td><span class="rm">RM </span>32.95</td>
             <td><span class="roas-badge roas-mid">2.34x</span></td>
             <td><span class="change-down">-8%</span></td>
           </tr>
           <tr>
-            <td>
-              <span class="td-campaign">SG — Slots Promo (EN)</span>
-              <span class="td-sub">Messaging · Lookalike 2%</span>
-            </td>
+            <td><span class="td-campaign">SG — Slots Promo</span><span class="td-sub">Lookalike 2%</span></td>
             <td><span class="status-badge status-testing">Testing</span></td>
             <td><span class="amount"><span class="rm">RM </span>980</span></td>
-            <td><span class="amount">31</span></td>
             <td><span class="amount register-val">19</span></td>
             <td><span class="rm">RM </span>51.58</td>
             <td><span class="roas-badge roas-mid">1.87x</span></td>
             <td><span class="change-flat">New</span></td>
           </tr>
           <tr>
-            <td>
-              <span class="td-campaign">MY — Welcome Bonus (CN)</span>
-              <span class="td-sub">Messaging · Retarget engaged</span>
-            </td>
+            <td><span class="td-campaign">MY — Welcome Bonus</span><span class="td-sub">Retarget engaged</span></td>
             <td><span class="status-badge status-paused">Paused</span></td>
             <td><span class="amount"><span class="rm">RM </span>720</span></td>
-            <td><span class="amount">18</span></td>
             <td><span class="amount register-val low">9</span></td>
             <td><span class="rm">RM </span>80.00</td>
             <td><span class="roas-badge roas-low">0.74x</span></td>
             <td><span class="change-down">-34%</span></td>
           </tr>
           <tr>
-            <td>
-              <span class="td-campaign">SG — Live Casino (CN)</span>
-              <span class="td-sub">Messaging · Interest-based</span>
-            </td>
+            <td><span class="td-campaign">SG — Live Casino</span><span class="td-sub">Interest-based</span></td>
             <td><span class="status-badge status-active">Active</span></td>
             <td><span class="amount"><span class="rm">RM </span>470</span></td>
-            <td><span class="amount">42</span></td>
             <td><span class="amount register-val high">35</span></td>
             <td><span class="rm">RM </span>13.43</td>
             <td><span class="roas-badge roas-high">3.65x</span></td>
@@ -1143,17 +798,14 @@
           <tr>
             <td colspan="2" class="total-label">Weekly Total</td>
             <td class="total-amount">RM 8,420</td>
-            <td class="total-amount">347</td>
             <td class="total-amount">250</td>
-            <td colspan="3" style="color:var(--dim);font-size:11px;">Avg RM33.68 / register · 72% conv. rate · Blended 2.41x ROAS</td>
+            <td colspan="3" style="color:var(--dim);">Avg RM33.68/register · 2.41x ROAS</td>
           </tr>
         </tfoot>
       </table>
     </div>
 
-    <p style="font-size:10px;color:var(--muted);margin-top:10px;font-family:'Space Mono',monospace;letter-spacing:0.08em;">
-      ROAS thresholds: <span style="color:var(--green)">High ≥ 3.0x</span> · <span style="color:var(--amber)">Mid 1.0–2.9x</span> · <span style="color:var(--red)">Low < 1.0x</span>
-    </p>
+    <p class="legend-note">ROAS: <span style="color:var(--green)">High ≥ 3.0x</span> · <span style="color:var(--amber)">Mid 1.0–2.9x</span> · <span style="color:var(--red)">Low &lt; 1.0x</span></p>
   </section>
 
   <!-- CREATIVE ASSETS -->
@@ -1166,442 +818,297 @@
 
     <div class="creative-grid">
 
-      <!-- Ad 2: Golden Boot Showdown -->
       <div class="creative-card">
         <div class="creative-thumb">
-          <img src="assets/ad-2-golden-boot-showdown.png" alt="i88 World Cup 2026 Event — Golden Boot Showdown">
+          <img src="assets/ad-2-golden-boot-showdown.png" alt="Golden Boot Showdown">
           <span class="creative-ad-number">AD 2</span>
           <div class="creative-status">
             <span class="creative-status-badge rejected">Rejected</span>
-            <span class="creative-status-badge pending">Reuploaded · Pending</span>
+            <span class="creative-status-badge pending">Pending Review</span>
           </div>
         </div>
         <div class="creative-body">
-          <h3 class="creative-title">WorldCup 2026 Event — Golden Boot Showdown</h3>
+          <h3 class="creative-title">Golden Boot Showdown</h3>
           <div class="creative-meta-row">
             <span class="creative-tag country">🇲🇾 Malaysia</span>
             <span class="creative-tag">Sports Betting</span>
-            <span class="creative-tag">In-app Screenshot</span>
           </div>
-          <p class="creative-desc">Live match odds + "Up to MYR 100,000 to be Won" — built for the World Cup creative refresh flagged in this week's Sports Betting solution. First submission was <strong>rejected</strong>, reuploaded and currently <strong>pending Meta review</strong>.</p>
-          <div class="creative-footer-note">
-            <span>Linked: MY — Sports Betting (BM)</span>
-            <span>9:16</span>
-          </div>
+          <p class="creative-desc">World Cup odds creative. <strong>Rejected once, reuploaded</strong> — now pending Meta review.</p>
+          <div class="creative-footer-note"><span>Sports Betting (BM)</span><span>9:16</span></div>
         </div>
       </div>
 
-      <!-- Ad 3: Ronaldinho Streetball Bonanza -->
       <div class="creative-card">
         <div class="creative-thumb">
-          <img src="assets/ad-3-ronaldinho-streetball.jpeg" alt="Register & Top Up — Ronaldinho's Streetball Bonanza 188 Free Spins">
+          <img src="assets/ad-3-ronaldinho-streetball.jpeg" alt="Ronaldinho's Streetball Bonanza">
           <span class="creative-ad-number">AD 3</span>
           <div class="creative-status">
             <span class="creative-status-badge rejected">Rejected</span>
-            <span class="creative-status-badge pending">Reuploaded · Pending</span>
+            <span class="creative-status-badge pending">Pending Review</span>
           </div>
         </div>
         <div class="creative-body">
-          <h3 class="creative-title">Register & Top Up — Ronaldinho's Streetball Bonanza</h3>
+          <h3 class="creative-title">Ronaldinho's Streetball Bonanza</h3>
           <div class="creative-meta-row">
             <span class="creative-tag country">🇲🇾 Malaysia</span>
             <span class="creative-tag">Slots Promo</span>
-            <span class="creative-tag">188 Free Spins</span>
           </div>
-          <p class="creative-desc">Register + min. <strong>MYR 50</strong> deposit unlocks 188 FS on a branded slot title. Feeds the top-performing Slots Promo campaign (3.12x ROAS, currently scaling). First submission was <strong>rejected</strong>, reuploaded and currently <strong>pending Meta review</strong>.</p>
-          <div class="creative-footer-note">
-            <span>Linked: MY — Slots Promo (BM)</span>
-            <span>3:4</span>
-          </div>
+          <p class="creative-desc">188 free spins offer for our top Slots campaign. <strong>Rejected once, reuploaded</strong> — now pending review.</p>
+          <div class="creative-footer-note"><span>Slots Promo (BM)</span><span>3:4</span></div>
         </div>
       </div>
 
-      <!-- Ad 4: World Cup Jersey Giveaway -->
       <div class="creative-card">
         <div class="creative-thumb placeholder">
           <span class="creative-ad-number">AD 4</span>
-          <div class="creative-status">
-            <span class="creative-status-badge awaiting">Awaiting Upload</span>
-          </div>
-          <p class="creative-thumb-placeholder-text">World Cup Jersey<br>Giveaway<br>— file pending —</p>
+          <div class="creative-status"><span class="creative-status-badge awaiting">Awaiting Upload</span></div>
+          <p class="creative-thumb-placeholder-text">World Cup Jersey<br>Giveaway</p>
         </div>
         <div class="creative-body">
           <h3 class="creative-title">World Cup Jersey Giveaway</h3>
           <div class="creative-meta-row">
             <span class="creative-tag country">🇲🇾 MY · 🇸🇬 SG</span>
             <span class="creative-tag">Cross-Market</span>
-            <span class="creative-tag">EN + CN Variant</span>
           </div>
-          <p class="creative-desc">6-jersey giveaway (Argentina, Spain, Portugal, Brazil, France, England) — min deposit <strong>SGD 100 / MYR 150</strong>, 1 entry per eligible match, 23–30 Jun 2026, 5 lucky winners. Spans both MY and SG audiences; serves as a shared retention hook across markets.</p>
-          <div class="creative-footer-note">
-            <span>Linked: MY — Sports Betting + SG markets</span>
-            <span>1:1</span>
-          </div>
+          <p class="creative-desc">6-jersey giveaway, 5 winners. Shared promo across both markets. File not uploaded yet.</p>
+          <div class="creative-footer-note"><span>MY + SG</span><span>1:1</span></div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- CHALLENGES & SOLUTIONS -->
+  <!-- CHALLENGES & FIXES -->
   <section class="issues-section reveal">
     <div class="section-header">
-      <h2 class="section-title">Challenges & Solutions</h2>
+      <h2 class="section-title">Challenges & Fixes</h2>
       <div class="section-line"></div>
-      <span class="section-count">7 IDENTIFIED</span>
+      <span class="section-count">7 ITEMS</span>
     </div>
 
-    <div class="issues-grid">
+    <div class="issues-list">
 
-      <!-- 1: Ad Account Restriction -->
-      <div class="issue-card">
-        <div class="issue-side problem">
-          <span class="issue-tag risk"><span class="issue-tag-dot"></span>High Risk</span>
-          <h3 class="issue-title">Ad Account Restriction</h3>
-          <p class="issue-desc">Facebook may restrict or disable the ad account at any time — policy flags, unusual spend spikes, or automated reviews. A single account ban halts <strong>all 6 active campaigns</strong> and kills revenue flow instantly.</p>
-          <div class="issue-impact">IMPACT: 100% downtime on all campaigns if primary account gets banned</div>
+      <div class="issue-row">
+        <div class="issue-row-head">
+          <span class="issue-num">01</span>
+          <h3 class="issue-row-title">Ad Account Restriction</h3>
+          <span class="issue-tag risk">High Risk</span>
         </div>
-        <div class="issue-side solution">
-          <span class="issue-tag fix"><span class="issue-tag-dot"></span>Solution</span>
-          <h3 class="issue-title">Buy More Ad Accounts for Risk Coverage</h3>
-          <ul class="solution-steps">
-            <li><strong>Purchase 3–5 additional ad accounts</strong> via separate verified Business Manager profiles to distribute risk</li>
-            <li><strong>Split by market</strong> — MY campaigns on Account A & B, SG campaigns on Account C & D</li>
-            <li><strong>Warm up new accounts slowly</strong> — start RM30/day, increase 20% every 3 days to avoid triggering flags</li>
-            <li><strong>Mirror winning campaigns</strong> on backup accounts — if primary goes down, activate backup within 30 minutes</li>
-            <li><strong>Never run all spend from one BM</strong> — diversify ownership across 2–3 Business Managers</li>
-          </ul>
-        </div>
+        <p class="issue-line problem"><span class="label">Problem:</span>Facebook can ban our account anytime — all 6 campaigns would stop instantly.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Buy <strong>3–5 backup ad accounts</strong> and mirror our winning campaigns on them.</p>
       </div>
 
-      <!-- 2: Low ROAS Campaign -->
-      <div class="issue-card">
-        <div class="issue-side problem">
-          <span class="issue-tag risk"><span class="issue-tag-dot"></span>Revenue Loss</span>
-          <h3 class="issue-title">MY Welcome Bonus (CN) Below 1.0x ROAS</h3>
-          <p class="issue-desc">Campaign dropped to <strong>0.74x ROAS</strong> (-34% vs last week). Spent RM720 but generated only RM532 in value. The retarget audience is likely exhausted — frequency is climbing and conversions are dropping fast.</p>
-          <div class="issue-impact">IMPACT: RM188 net loss this week, bleeding since Week 3</div>
+      <div class="issue-row">
+        <div class="issue-row-head">
+          <span class="issue-num">02</span>
+          <h3 class="issue-row-title">Welcome Bonus Losing Money</h3>
+          <span class="issue-tag risk">Losing Money</span>
         </div>
-        <div class="issue-side solution">
-          <span class="issue-tag fix"><span class="issue-tag-dot"></span>Solution</span>
-          <h3 class="issue-title">Pause, Refresh, Restructure</h3>
-          <ul class="solution-steps">
-            <li><strong>Keep paused for 7 days minimum</strong> — let audience pool refresh and reduce ad fatigue</li>
-            <li><strong>Create new creatives in Chinese</strong> — video testimonials of real winners, not just static bonus banners</li>
-            <li><strong>Switch audience</strong> — move from retarget to Lookalike 1% of past depositors instead</li>
-            <li><strong>Reallocate RM720 budget</strong> to MY Slots Promo (3.12x ROAS) — proven winner gets more fuel</li>
-            <li><strong>Set kill rule</strong> — any campaign below 1.0x ROAS after RM500 spend auto-pauses</li>
-          </ul>
-        </div>
+        <p class="issue-line problem"><span class="label">Problem:</span>ROAS dropped to <strong>0.74x</strong> (-34%) — this campaign now loses money.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span><strong>Pause it</strong>, refresh the creative, move budget to Slots Promo instead.</p>
       </div>
 
-      <!-- 3: Sports Betting Declining -->
-      <div class="issue-card">
-        <div class="issue-side problem">
-          <span class="issue-tag warn"><span class="issue-tag-dot"></span>Declining</span>
-          <h3 class="issue-title">MY Sports Betting Down -8% Week-over-Week</h3>
-          <p class="issue-desc">Sports Betting campaign ROAS fell from 2.54x to 2.34x. Cost per result crept up to RM25. <strong>Broad targeting</strong> is running out of cheap inventory — the easy conversions have been captured, and Meta is now reaching less qualified users.</p>
-          <div class="issue-impact">IMPACT: Will drop below 2.0x within 1-2 weeks if not addressed</div>
+      <div class="issue-row">
+        <div class="issue-row-head">
+          <span class="issue-num">03</span>
+          <h3 class="issue-row-title">Sports Betting Slowing Down</h3>
+          <span class="issue-tag warn">Declining</span>
         </div>
-        <div class="issue-side solution">
-          <span class="issue-tag fix"><span class="issue-tag-dot"></span>Solution</span>
-          <h3 class="issue-title">Audience Refresh + World Cup Angle</h3>
-          <ul class="solution-steps">
-            <li><strong>Build Lookalike audience</strong> from existing Sports Betting converters — 1% LAL will be more targeted than broad</li>
-            <li><strong>World Cup 2026 creative angle</strong> — use match schedules, live odds, and "Bet on Malaysia" hooks in BM copy</li>
-            <li><strong>Test video format</strong> — screen recording of live betting interface showing a winning bet with payout</li>
-            <li><strong>Exclude converted users</strong> — stop paying to reach people who already registered</li>
-          </ul>
-        </div>
+        <p class="issue-line problem"><span class="label">Problem:</span>ROAS fell from 2.54x to <strong>2.34x</strong> as broad targeting runs out of cheap reach.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Switch to a Lookalike audience and launch our <strong>World Cup creative</strong>.</p>
       </div>
 
-      <!-- 4: SG Market High CPR -->
-      <div class="issue-card">
-        <div class="issue-side problem">
-          <span class="issue-tag warn"><span class="issue-tag-dot"></span>Expensive</span>
-          <h3 class="issue-title">SG Slots Promo High Cost Per Result</h3>
-          <p class="issue-desc">SG Slots campaign is paying <strong>RM31.61 per result</strong> — 40% higher than the MY equivalent (RM22.54). Singapore's ad auction is more competitive, but the gap is too wide to sustain at scale.</p>
-          <div class="issue-impact">IMPACT: RM9.07 overpay per result vs MY benchmark = RM281 wasted this week</div>
+      <div class="issue-row">
+        <div class="issue-row-head">
+          <span class="issue-num">04</span>
+          <h3 class="issue-row-title">Singapore Costs Too High</h3>
+          <span class="issue-tag warn">Expensive</span>
         </div>
-        <div class="issue-side solution">
-          <span class="issue-tag fix"><span class="issue-tag-dot"></span>Solution</span>
-          <h3 class="issue-title">SG-Specific Creative + SGD Pricing</h3>
-          <ul class="solution-steps">
-            <li><strong>Create SG-specific ad copy</strong> — reference SGD amounts, Singapore payment methods (PayNow, GrabPay)</li>
-            <li><strong>Use Singlish-flavoured English</strong> in copy — "Shiok bonus waiting for you" resonates more than generic English</li>
-            <li><strong>Test WhatsApp over Messenger</strong> — SG market prefers WhatsApp for business conversations</li>
-            <li><strong>Narrow age range</strong> — SG sweet spot is 25–44, exclude below 21 and above 55 to reduce waste</li>
-          </ul>
-        </div>
+        <p class="issue-line problem"><span class="label">Problem:</span>SG costs <strong>40% more</strong> per result than Malaysia (RM31.61 vs RM22.54).</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Build SG-specific ads with <strong>SGD pricing</strong> and local payment methods.</p>
       </div>
 
-      <!-- 5: Creative Fatigue -->
-      <div class="issue-card">
-        <div class="issue-side problem">
-          <span class="issue-tag warn"><span class="issue-tag-dot"></span>Fatigue</span>
-          <h3 class="issue-title">Creative Fatigue Across Campaigns</h3>
-          <p class="issue-desc">Most campaigns have been running the <strong>same 2–3 creatives for 3+ weeks</strong>. Frequency is climbing above 2.5 on MY campaigns. When users see the same ad repeatedly, CTR drops, CPR spikes, and ROAS erodes — even on winning audiences.</p>
-          <div class="issue-impact">IMPACT: Estimated 15-20% ROAS decay if creatives are not refreshed within 7 days</div>
+      <div class="issue-row">
+        <div class="issue-row-head">
+          <span class="issue-num">05</span>
+          <h3 class="issue-row-title">Ad Creatives Are Fatigued</h3>
+          <span class="issue-tag warn">Fatigue</span>
         </div>
-        <div class="issue-side solution">
-          <span class="issue-tag fix"><span class="issue-tag-dot"></span>Solution</span>
-          <h3 class="issue-title">Creative Refresh Pipeline</h3>
-          <ul class="solution-steps">
-            <li><strong>Produce 5 new creatives per week</strong> — mix of video (15s), carousel, and static with bold Malay/English headlines</li>
-            <li><strong>Rotate every 7–10 days</strong> — turn off any creative with frequency > 3.0, replace with fresh variant</li>
-            <li><strong>Use UGC-style content</strong> — screen recordings, "real player" testimonials, phone-filmed reactions to wins</li>
-            <li><strong>A/B test hooks</strong> — first 3 seconds of video determines 80% of performance, test 3 different hooks per creative</li>
-          </ul>
-        </div>
+        <p class="issue-line problem"><span class="label">Problem:</span>Same ads running <strong>3+ weeks</strong> — performance is fading.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Produce <strong>5 new creatives weekly</strong>, rotate every 7–10 days.</p>
       </div>
 
-      <!-- 6: Pixel & Tracking Gaps -->
-      <div class="issue-card">
-        <div class="issue-side problem">
-          <span class="issue-tag warn"><span class="issue-tag-dot"></span>Tracking</span>
-          <h3 class="issue-title">Incomplete Conversion Tracking</h3>
-          <p class="issue-desc">Registrations from <strong>WhatsApp conversations</strong> are not fully tracked back to Meta. Some deposits show as organic when they came from ads. Without complete data, Meta's algorithm can't optimize for the right outcome — ROAS numbers are likely <strong>underreported</strong>.</p>
-          <div class="issue-impact">IMPACT: True ROAS may be 20-30% higher but Meta can't learn from it</div>
+      <div class="issue-row">
+        <div class="issue-row-head">
+          <span class="issue-num">06</span>
+          <h3 class="issue-row-title">Incomplete Tracking</h3>
+          <span class="issue-tag warn">Data Gap</span>
         </div>
-        <div class="issue-side solution">
-          <span class="issue-tag fix"><span class="issue-tag-dot"></span>Solution</span>
-          <h3 class="issue-title">Full-Funnel Attribution Setup</h3>
-          <ul class="solution-steps">
-            <li><strong>Implement Conversions API (CAPI)</strong> — server-side tracking that works even with iOS privacy restrictions</li>
-            <li><strong>Upload offline conversions weekly</strong> — export deposits from backend, match to Meta click IDs, feed back to ad account</li>
-            <li><strong>Tag every link with UTM parameters</strong> — utm_source=facebook&utm_campaign=[name]&utm_content=[creative_id]</li>
-            <li><strong>Aim for Event Match Quality > 6.0</strong> in Meta Events Manager for accurate attribution</li>
-          </ul>
-        </div>
+        <p class="issue-line problem"><span class="label">Problem:</span>WhatsApp registrations aren't fully tracked — real ROAS may be higher than reported.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Set up <strong>Conversions API</strong> and upload deposit data weekly.</p>
       </div>
 
-      <!-- 7: Landing Page Conversion -->
-      <div class="issue-card">
-        <div class="issue-side problem">
-          <span class="issue-tag warn"><span class="issue-tag-dot"></span>Conversion</span>
-          <h3 class="issue-title">Landing Page to Registration Drop-Off</h3>
-          <p class="issue-desc">Estimated <strong>35–40% of clicks</strong> from ads do not complete registration. Users land on the page but bounce before signing up. The gap between ad click and registration is where the most budget is wasted — every lost click is a paid opportunity gone.</p>
-          <div class="issue-impact">IMPACT: ~140 potential registrations lost this week (RM3,400 in wasted clicks)</div>
+      <div class="issue-row">
+        <div class="issue-row-head">
+          <span class="issue-num">07</span>
+          <h3 class="issue-row-title">Landing Page Drop-Off</h3>
+          <span class="issue-tag warn">Wasted Spend</span>
         </div>
-        <div class="issue-side solution">
-          <span class="issue-tag fix"><span class="issue-tag-dot"></span>Solution</span>
-          <h3 class="issue-title">Landing Page Optimization</h3>
-          <ul class="solution-steps">
-            <li><strong>Reduce page load to under 3 seconds</strong> — compress images, lazy load below-fold content, use CDN</li>
-            <li><strong>Match ad message to landing page</strong> — if ad says "100% Welcome Bonus", hero headline must say the same</li>
-            <li><strong>Simplify registration form</strong> — phone number + password only, no unnecessary fields</li>
-            <li><strong>Add trust signals above the fold</strong> — "Beroperasi sejak 2016", "Withdraw 5 minit", "24/7 Support"</li>
-            <li><strong>A/B test 2 landing page variants</strong> — video hero vs static hero, measure registration rate difference</li>
-          </ul>
-        </div>
+        <p class="issue-line problem"><span class="label">Problem:</span><strong>35–40%</strong> of ad clicks never finish registration.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Speed up the page, simplify the form, add trust badges.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- ADVANCED OPTIMIZATION STRUCTURE -->
+  <!-- OPTIMIZATION PLAN -->
   <section class="optim-section reveal">
     <div class="section-header">
-      <h2 class="section-title">Advanced Optimization Structure</h2>
+      <h2 class="section-title">Optimization Plan</h2>
       <div class="section-line"></div>
       <span class="section-count">4 PHASES</span>
     </div>
 
     <div class="optim-phase-grid">
 
-      <!-- Phase 1 -->
       <div class="optim-phase">
         <div class="optim-phase-header">
           <div class="phase-number">01</div>
           <div class="phase-info">
-            <h3 class="phase-name">Foundation & Infrastructure</h3>
-            <p class="phase-sub">Fix tracking and protect accounts</p>
+            <h3 class="phase-name">Foundation</h3>
+            <p class="phase-sub">Fix tracking, protect accounts</p>
           </div>
           <span class="phase-timeline">This Week</span>
         </div>
         <div class="optim-phase-body">
-          <div class="optim-item">
-            <p class="optim-item-label">Multi-Account Setup</p>
-            <p class="optim-item-text">Provision <strong>3–5 verified ad accounts</strong> across 2–3 Business Managers. Assign MY to Account A+B, SG to Account C+D. Warm each account at RM30/day for 7 days before scaling.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Tracking Pipeline</p>
-            <p class="optim-item-text">Install <strong>Conversions API</strong> + offline conversion uploads. Every registration and deposit must be tracked back to Meta. Target Event Match Quality > 6.0 for each ad account.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Naming Convention</p>
-            <p class="optim-item-text">Standardize: <strong>[MARKET]_[PRODUCT]_[LANG]_[AUDIENCE]_[DATE]</strong>. Example: MY_Slots_BM_LAL1%-Depositors_Jun26. Enables instant filtering and cross-account analysis.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Automated Rules</p>
-            <p class="optim-item-text">Set rules: <strong>Pause if ROAS < 1.0x after RM500</strong>. Increase budget 15% if ROAS > 3.0x for 3 days. Alert if frequency > 3.0. Alert if daily spend drops 30% unexpectedly (account issue signal).</p>
-          </div>
+          <ul class="phase-list">
+            <li><strong>Backup accounts</strong> — set up 3–5 to avoid losing all campaigns to a ban.</li>
+            <li><strong>Fix tracking</strong> — install Conversions API for accurate registration data.</li>
+            <li><strong>Standard naming</strong> — name campaigns consistently for easy reporting.</li>
+            <li><strong>Auto-rules</strong> — auto-pause losers, auto-scale winners.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Phase 2 -->
       <div class="optim-phase">
         <div class="optim-phase-header">
           <div class="phase-number">02</div>
           <div class="phase-info">
-            <h3 class="phase-name">Creative & Audience Testing</h3>
-            <p class="phase-sub">Systematic discovery of winners</p>
+            <h3 class="phase-name">Testing</h3>
+            <p class="phase-sub">Find new winning ads & audiences</p>
           </div>
           <span class="phase-timeline">Week 5–6</span>
         </div>
         <div class="optim-phase-body">
-          <div class="optim-item">
-            <p class="optim-item-label">Creative Matrix</p>
-            <p class="optim-item-text">Test <strong>3 hooks x 3 formats x 2 languages</strong> = 18 variants. Formats: video (15s), carousel, static. Languages: BM natural copy, English, Chinese. Kill any variant below 1.5x ROAS after RM200.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Audience Layers</p>
-            <p class="optim-item-text"><strong>Layer 1:</strong> LAL 1% from depositors (highest value). <strong>Layer 2:</strong> LAL 2% from registrations (volume). <strong>Layer 3:</strong> Interest-based (casino, sports). <strong>Layer 4:</strong> Broad (let Meta find). Test independently at RM50/day ABO.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Market-Specific Copy</p>
-            <p class="optim-item-text"><strong>MY-BM:</strong> "Daftar Sekarang & Claim Bonus 100%! Withdraw 5 minit." <strong>SG-EN:</strong> "Claim Your Welcome Bonus — SGD deposits, instant withdrawal." Match tone to market, never generic copy across regions.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Landing Page A/B</p>
-            <p class="optim-item-text">Test <strong>2 variants per market</strong>: Variant A = video hero + single CTA. Variant B = image hero + benefit bullets + CTA. Track registration rate. Winner gets all traffic by end of Week 6.</p>
-          </div>
+          <ul class="phase-list">
+            <li><strong>New creatives</strong> — test different hooks, formats, and languages.</li>
+            <li><strong>New audiences</strong> — test Lookalike, interest, and broad targeting.</li>
+            <li><strong>Local copy</strong> — write unique ad copy per market, no generic translations.</li>
+            <li><strong>Landing page test</strong> — run 2 designs, keep the better-converting one.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Phase 3 -->
       <div class="optim-phase">
         <div class="optim-phase-header">
           <div class="phase-number">03</div>
           <div class="phase-info">
-            <h3 class="phase-name">Scaling Winners</h3>
-            <p class="phase-sub">Amplify proven campaigns systematically</p>
+            <h3 class="phase-name">Scaling</h3>
+            <p class="phase-sub">Grow what's already working</p>
           </div>
           <span class="phase-timeline">Week 6–8</span>
         </div>
         <div class="optim-phase-body">
-          <div class="optim-item">
-            <p class="optim-item-label">Vertical Scaling</p>
-            <p class="optim-item-text">For campaigns above 2.5x ROAS: <strong>increase budget 20% every 3 days</strong>. Never double overnight. MY Slots (3.12x) scales first: RM2,840 → RM3,400 → RM4,100. Monitor ROAS daily — pause scaling if it drops below 2.0x.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Horizontal Scaling</p>
-            <p class="optim-item-text"><strong>Duplicate winning ad sets</strong> to new audiences. Clone SG Live Casino (3.65x ROAS) creative into MY market with BM copy. Clone MY Slots creative into SG with SGD pricing. Cross-pollinate proven assets.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Budget Framework</p>
-            <p class="optim-item-text"><strong>70/20/10 rule:</strong> 70% of budget to proven winners (ROAS > 2.5x), 20% to active testing, 10% to experimental new markets/products. Current RM8,420 → target RM12,000/week by Week 8.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Cross-Account Distribution</p>
-            <p class="optim-item-text">As spend scales past <strong>RM15,000/week</strong>, split campaigns across ad accounts. No single account should carry > RM8,000/week. This protects against restriction risk and maintains delivery stability.</p>
-          </div>
+          <ul class="phase-list">
+            <li><strong>Raise budgets slowly</strong> — +20% every 3 days on campaigns above 2.5x ROAS.</li>
+            <li><strong>Copy winners</strong> — bring top ads into new markets and audiences.</li>
+            <li><strong>70/20/10 budget split</strong> — winners / testing / new ideas.</li>
+            <li><strong>Spread spend</strong> — split across accounts once weekly spend passes RM15,000.</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Phase 4 -->
       <div class="optim-phase">
         <div class="optim-phase-header">
           <div class="phase-number">04</div>
           <div class="phase-info">
-            <h3 class="phase-name">Retention & Expansion</h3>
-            <p class="phase-sub">Maximize LTV + new channels</p>
+            <h3 class="phase-name">Retention</h3>
+            <p class="phase-sub">Keep customers, explore new channels</p>
           </div>
           <span class="phase-timeline">Week 8+</span>
         </div>
         <div class="optim-phase-body">
-          <div class="optim-item">
-            <p class="optim-item-label">Retargeting Funnel</p>
-            <p class="optim-item-text"><strong>Tier 1:</strong> Clicked ad but didn't register — show social proof (player count, withdrawal speed). <strong>Tier 2:</strong> Registered but didn't deposit — show first-deposit bonus urgency. <strong>Tier 3:</strong> Past depositors — upsell new games/promos. RM30–50/day per tier.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">WhatsApp Response SOP</p>
-            <p class="optim-item-text"><strong>Reply within 5 minutes</strong> — response time directly impacts conversion. Script: greeting → qualifying question → bonus explanation → registration link → deposit guidance. Track conversation-to-deposit rate per agent.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Platform Expansion</p>
-            <p class="optim-item-text">Once Facebook hits <strong>3.0x blended ROAS</strong> consistently, test <strong>TikTok Ads</strong> (younger demographic, video-native) and <strong>Google Ads</strong> (search intent for "online casino Malaysia"). Allocate 15% of total budget to new channels.</p>
-          </div>
-          <div class="optim-item">
-            <p class="optim-item-label">Weekly Review Ritual</p>
-            <p class="optim-item-text"><strong>Every Monday:</strong> Review spend, ROAS, CPR across all accounts. Kill losers (< 1.0x after RM500), scale winners (+20%), launch 2–3 new test ad sets. Update this report. Track progress against 2.5x blended target.</p>
-          </div>
+          <ul class="phase-list">
+            <li><strong>Retarget drop-offs</strong> — re-engage people who clicked but didn't convert.</li>
+            <li><strong>Fast replies</strong> — answer WhatsApp messages within 5 minutes.</li>
+            <li><strong>New platforms</strong> — test TikTok & Google once Facebook hits 3.0x ROAS.</li>
+            <li><strong>Weekly check-in</strong> — review numbers every Monday, adjust fast.</li>
+          </ul>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- OPTIMIZATION FUNNEL -->
+  <!-- FUNNEL -->
   <section class="funnel-section reveal">
     <div class="section-header">
       <h2 class="section-title">Campaign Lifecycle</h2>
       <div class="section-line"></div>
-      <span class="section-count">4-STAGE FUNNEL</span>
+      <span class="section-count">4 STAGES</span>
     </div>
 
     <div class="funnel-wrapper">
       <div class="funnel-flow">
         <div class="funnel-stage">
-          <div class="funnel-stage-num">01</div>
           <div class="funnel-stage-name">Test</div>
-          <p class="funnel-stage-desc">RM30–50/day ABO · 3+ creatives · 72hr data · Kill below 1.0x</p>
+          <p class="funnel-stage-desc">Small budget, multiple creatives</p>
         </div>
         <div class="funnel-stage">
-          <div class="funnel-stage-num">02</div>
           <div class="funnel-stage-name">Validate</div>
-          <p class="funnel-stage-desc">RM80/day · ROAS > 2.0x for 7 days · Frequency < 2.5 · Stable CPR</p>
+          <p class="funnel-stage-desc">Confirm ROAS holds for 7 days</p>
         </div>
         <div class="funnel-stage">
-          <div class="funnel-stage-num">03</div>
           <div class="funnel-stage-name">Scale</div>
-          <p class="funnel-stage-desc">CBO RM120–200/day · +20% every 3 days · Duplicate to new audiences</p>
+          <p class="funnel-stage-desc">Raise budget gradually</p>
         </div>
         <div class="funnel-stage">
-          <div class="funnel-stage-num">04</div>
           <div class="funnel-stage-name">Protect</div>
-          <p class="funnel-stage-desc">Multi-account split · Refresh creatives · Retarget drop-offs · Blended 2.5x+</p>
+          <p class="funnel-stage-desc">Spread risk, refresh creatives</p>
         </div>
       </div>
     </div>
 
-    <!-- Priority -->
-    <div class="section-header" style="margin-top:40px;">
-      <h2 class="section-title">This Week's Priority Actions</h2>
+    <div class="section-header" style="margin-top:36px;">
+      <h2 class="section-title">This Week's Priorities</h2>
       <div class="section-line"></div>
       <span class="section-count">TOP 6</span>
     </div>
 
-    <div class="priority-grid">
-      <div class="priority-cell">
-        <div class="priority-cell-rank">P1</div>
-        <p class="priority-cell-title">Buy Ad Accounts</p>
-        <p class="priority-cell-desc">Set up 3–5 backup accounts across multiple BMs to cover restriction risk</p>
+    <div class="priority-list">
+      <div class="priority-row">
+        <span class="priority-rank">P1</span>
+        <p class="priority-text"><strong>Buy backup ad accounts</strong> — cover the ban risk.</p>
       </div>
-      <div class="priority-cell">
-        <div class="priority-cell-rank">P2</div>
-        <p class="priority-cell-title">Fix Tracking</p>
-        <p class="priority-cell-desc">Install CAPI + offline conversion uploads for full registration attribution</p>
+      <div class="priority-row">
+        <span class="priority-rank">P2</span>
+        <p class="priority-text"><strong>Fix tracking</strong> — install Conversions API.</p>
       </div>
-      <div class="priority-cell">
-        <div class="priority-cell-rank">P3</div>
-        <p class="priority-cell-title">Scale MY Slots</p>
-        <p class="priority-cell-desc">Top performer at 3.12x — increase from RM2,840 to RM3,400 this week</p>
+      <div class="priority-row">
+        <span class="priority-rank">P3</span>
+        <p class="priority-text"><strong>Scale Slots Promo</strong> — our top performer at 3.12x.</p>
       </div>
-      <div class="priority-cell">
-        <div class="priority-cell-rank">P4</div>
-        <p class="priority-cell-title">Refresh Creatives</p>
-        <p class="priority-cell-desc">Produce 5 new variants — video testimonials + World Cup angles for Sports</p>
+      <div class="priority-row">
+        <span class="priority-rank">P4</span>
+        <p class="priority-text"><strong>Refresh creatives</strong> — new videos + World Cup angle.</p>
       </div>
-      <div class="priority-cell">
-        <div class="priority-cell-rank">P5</div>
-        <p class="priority-cell-title">SG Optimization</p>
-        <p class="priority-cell-desc">Create SG-specific copy with SGD, reduce RM31 CPR to below RM25 target</p>
+      <div class="priority-row">
+        <span class="priority-rank">P5</span>
+        <p class="priority-text"><strong>Fix Singapore costs</strong> — launch SGD-specific ads.</p>
       </div>
-      <div class="priority-cell">
-        <div class="priority-cell-rank">P6</div>
-        <p class="priority-cell-title">Kill Losers</p>
-        <p class="priority-cell-desc">Keep CN Welcome Bonus paused, reallocate RM720/week to winning campaigns</p>
+      <div class="priority-row">
+        <span class="priority-rank">P6</span>
+        <p class="priority-text"><strong>Keep Welcome Bonus paused</strong> — move its budget to winners.</p>
       </div>
     </div>
   </section>
@@ -1609,8 +1116,8 @@
   <!-- FOOTER -->
   <footer class="footnote">
     <div class="footnote-brand">i88</div>
-    <p class="footnote-text">Weekly Marketing Performance Report · Facebook Ads · MY + SG Markets</p>
-    <p class="footnote-text" style="font-family:'Space Mono',monospace;font-size:10px;">Week 4 · June 16–22, 2026</p>
+    <p class="footnote-text">Weekly Marketing Report · Facebook Ads · MY + SG</p>
+    <p class="footnote-text">Week 4 · Jun 16–22, 2026</p>
   </footer>
 
 </div>
@@ -1623,15 +1130,9 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  document.querySelectorAll('.creative-card, .issue-card, .optim-phase, .funnel-wrapper, .priority-grid').forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.transitionDelay = `${i * 0.06}s`;
-    observer.observe(el);
-  });
 </script>
 </body>
 </html>
