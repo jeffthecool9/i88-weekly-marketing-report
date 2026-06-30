@@ -271,6 +271,7 @@
   .status-paused  { background: rgba(255,129,120,0.14); color: var(--red);  border: 1px solid rgba(255,129,120,0.3); }
   .status-testing { background: rgba(255,201,74,0.14);  color: var(--amber); border: 1px solid rgba(255,201,74,0.3); }
   .status-scaling { background: rgba(124,180,255,0.14); color: var(--blue); border: 1px solid rgba(124,180,255,0.3); }
+  .status-archived { background: rgba(171,171,171,0.12); color: var(--muted); border: 1px solid rgba(171,171,171,0.3); }
 
   .roas-badge {
     display: inline-block;
@@ -691,27 +692,27 @@
     <div class="kpi-grid">
       <div class="kpi-card">
         <p class="kpi-label">Active Campaigns</p>
-        <p class="kpi-value highlight">6</p>
-        <p class="kpi-note">MY + SG combined</p>
+        <p class="kpi-value highlight">7 <span style="font-size:16px;color:var(--muted);">/ 9</span></p>
+        <p class="kpi-note">2 archived or inactive</p>
       </div>
       <div class="kpi-card">
         <p class="kpi-label">Weekly Spend</p>
-        <p class="kpi-value">RM 8,420</p>
-        <p class="kpi-note">+12% vs last week</p>
+        <p class="kpi-value">RM 1,769.50</p>
+        <p class="kpi-note">World Cup Jersey traffic</p>
       </div>
       <div class="kpi-card">
-        <p class="kpi-label">Blended ROAS</p>
-        <p class="kpi-value green">2.41x</p>
-        <p class="kpi-note">Target: 2.5x</p>
+        <p class="kpi-label">Total Clicks</p>
+        <p class="kpi-value">2,427</p>
+        <p class="kpi-note">Across all 9 campaigns</p>
       </div>
       <div class="kpi-card">
         <p class="kpi-label">Total Registers</p>
-        <p class="kpi-value">250</p>
-        <p class="kpi-note">72% conversion rate</p>
+        <p class="kpi-value">12</p>
+        <p class="kpi-note">Only 4 of 9 campaigns tracked</p>
       </div>
       <div class="kpi-card">
         <p class="kpi-label">Cost / Register</p>
-        <p class="kpi-value highlight">RM 33.68</p>
+        <p class="kpi-value highlight">RM 147.46</p>
         <p class="kpi-note">Blended average</p>
       </div>
     </div>
@@ -722,7 +723,7 @@
     <div class="section-header">
       <h2 class="section-title">Campaign Breakdown</h2>
       <div class="section-line"></div>
-      <span class="section-count">6 CAMPAIGNS</span>
+      <span class="section-count">9 CAMPAIGNS · WORLD CUP JERSEY</span>
     </div>
 
     <div class="table-wrapper">
@@ -732,80 +733,107 @@
             <th>Campaign</th>
             <th>Status</th>
             <th>Spend</th>
+            <th>Results</th>
             <th>Register</th>
             <th>Cost/Register</th>
-            <th>ROAS</th>
-            <th>vs Last Week</th>
+            <th>CTR</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="td-campaign">MY — Slots Promo</span><span class="td-sub">Lookalike 1%</span></td>
-            <td><span class="status-badge status-scaling">Scaling</span></td>
-            <td><span class="amount"><span class="rm">RM </span>2,840</span></td>
-            <td><span class="amount register-val">92</span></td>
-            <td><span class="rm">RM </span>30.87</td>
-            <td><span class="roas-badge roas-high">3.12x</span></td>
-            <td><span class="change-up">+18%</span></td>
+            <td><span class="td-campaign">SG — Worldcup Traffic (EN)</span><span class="td-sub">Dead — 0 clicks</span></td>
+            <td><span class="status-badge status-archived">Archived</span></td>
+            <td><span class="amount"><span class="rm">RM </span>0.47</span></td>
+            <td><span class="amount">1</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td>4.35%</td>
           </tr>
           <tr>
-            <td><span class="td-campaign">MY — Live Casino</span><span class="td-sub">Interest-based</span></td>
+            <td><span class="td-campaign">SG — Jersey Giveaway (EN)</span><span class="td-sub">No leads tracked</span></td>
             <td><span class="status-badge status-active">Active</span></td>
-            <td><span class="amount"><span class="rm">RM </span>1,960</span></td>
-            <td><span class="amount register-val">51</span></td>
-            <td><span class="rm">RM </span>38.43</td>
-            <td><span class="roas-badge roas-mid">2.08x</span></td>
-            <td><span class="change-up">+5%</span></td>
+            <td><span class="amount"><span class="rm">RM </span>257.99</span></td>
+            <td><span class="amount">256</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td>2.86%</td>
           </tr>
           <tr>
-            <td><span class="td-campaign">MY — Sports Betting</span><span class="td-sub">Broad targeting</span></td>
+            <td><span class="td-campaign">SG — Jersey Giveaway (BM) #1</span><span class="td-sub">Duplicate name</span></td>
             <td><span class="status-badge status-active">Active</span></td>
-            <td><span class="amount"><span class="rm">RM </span>1,450</span></td>
-            <td><span class="amount register-val">44</span></td>
-            <td><span class="rm">RM </span>32.95</td>
-            <td><span class="roas-badge roas-mid">2.34x</span></td>
-            <td><span class="change-down">-8%</span></td>
+            <td><span class="amount"><span class="rm">RM </span>201.11</span></td>
+            <td><span class="amount">115</span></td>
+            <td><span class="amount register-val high">4</span></td>
+            <td><span class="rm">RM </span>50.28</td>
+            <td>2.07%</td>
           </tr>
           <tr>
-            <td><span class="td-campaign">SG — Slots Promo</span><span class="td-sub">Lookalike 2%</span></td>
-            <td><span class="status-badge status-testing">Testing</span></td>
-            <td><span class="amount"><span class="rm">RM </span>980</span></td>
-            <td><span class="amount register-val">19</span></td>
-            <td><span class="rm">RM </span>51.58</td>
-            <td><span class="roas-badge roas-mid">1.87x</span></td>
-            <td><span class="change-flat">New</span></td>
-          </tr>
-          <tr>
-            <td><span class="td-campaign">MY — Welcome Bonus</span><span class="td-sub">Retarget engaged</span></td>
-            <td><span class="status-badge status-paused">Paused</span></td>
-            <td><span class="amount"><span class="rm">RM </span>720</span></td>
-            <td><span class="amount register-val low">9</span></td>
-            <td><span class="rm">RM </span>80.00</td>
-            <td><span class="roas-badge roas-low">0.74x</span></td>
-            <td><span class="change-down">-34%</span></td>
-          </tr>
-          <tr>
-            <td><span class="td-campaign">SG — Live Casino</span><span class="td-sub">Interest-based</span></td>
+            <td><span class="td-campaign">SG — Jersey Giveaway (CN)</span><span class="td-sub">Weak conversion</span></td>
             <td><span class="status-badge status-active">Active</span></td>
-            <td><span class="amount"><span class="rm">RM </span>470</span></td>
-            <td><span class="amount register-val high">35</span></td>
-            <td><span class="rm">RM </span>13.43</td>
-            <td><span class="roas-badge roas-high">3.65x</span></td>
-            <td><span class="change-up">+22%</span></td>
+            <td><span class="amount"><span class="rm">RM </span>218.88</span></td>
+            <td><span class="amount">125</span></td>
+            <td><span class="amount register-val low">1</span></td>
+            <td><span class="rm">RM </span>218.88</td>
+            <td>2.71%</td>
+          </tr>
+          <tr>
+            <td><span class="td-campaign">SG — Jersey Giveaway (BM) #2</span><span class="td-sub">Duplicate name</span></td>
+            <td><span class="status-badge status-active">Active</span></td>
+            <td><span class="amount"><span class="rm">RM </span>195.64</span></td>
+            <td><span class="amount">121</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td>2.77%</td>
+          </tr>
+          <tr>
+            <td><span class="td-campaign">MY — Jersey Giveaway (CN)</span><span class="td-sub">No leads tracked</span></td>
+            <td><span class="status-badge status-active">Active</span></td>
+            <td><span class="amount"><span class="rm">RM </span>139.13</span></td>
+            <td><span class="amount">392</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td>3.89%</td>
+          </tr>
+          <tr>
+            <td><span class="td-campaign">SG — Jersey Giveaway (i88Asia)</span><span class="td-sub">Dead weight</span></td>
+            <td><span class="status-badge status-paused">Inactive</span></td>
+            <td><span class="amount"><span class="rm">RM </span>62.72</span></td>
+            <td><span class="amount">57</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td><span class="roas-none">—</span></td>
+            <td>3.71%</td>
+          </tr>
+          <tr>
+            <td><span class="td-campaign">SG — Jersey Giveaway #1</span><span class="td-sub">Duplicate name</span></td>
+            <td><span class="status-badge status-active">Active</span></td>
+            <td><span class="amount"><span class="rm">RM </span>343.23</span></td>
+            <td><span class="amount">263</span></td>
+            <td><span class="amount register-val">4</span></td>
+            <td><span class="rm">RM </span>85.81</td>
+            <td>2.98%</td>
+          </tr>
+          <tr>
+            <td><span class="td-campaign">SG — Jersey Giveaway #2</span><span class="td-sub">Duplicate name</span></td>
+            <td><span class="status-badge status-active">Active</span></td>
+            <td><span class="amount"><span class="rm">RM </span>350.33</span></td>
+            <td><span class="amount">204</span></td>
+            <td><span class="amount register-val">3</span></td>
+            <td><span class="rm">RM </span>116.78</td>
+            <td>1.48%</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="2" class="total-label">Weekly Total</td>
-            <td class="total-amount">RM 8,420</td>
-            <td class="total-amount">250</td>
-            <td colspan="3" style="color:var(--dim);">Avg RM33.68/register · 2.41x ROAS</td>
+            <td class="total-amount">RM 1,769.50</td>
+            <td class="total-amount">1,534</td>
+            <td colspan="3" style="color:var(--dim);">12 registers · RM147.46 avg cost/register</td>
           </tr>
         </tfoot>
       </table>
     </div>
 
-    <p class="legend-note">ROAS: <span style="color:var(--green)">High ≥ 3.0x</span> · <span style="color:var(--amber)">Mid 1.0–2.9x</span> · <span style="color:var(--red)">Low &lt; 1.0x</span></p>
+    <p class="legend-note">Results = landing page views/clicks. Register = tracked leads — only 4 of 9 campaigns have lead tracking set up.</p>
   </section>
 
   <!-- CREATIVE ASSETS -->
@@ -834,7 +862,7 @@
             <span class="creative-tag">Sports Betting</span>
           </div>
           <p class="creative-desc">World Cup odds creative. <strong>Rejected once, reuploaded</strong> — now pending Meta review.</p>
-          <div class="creative-footer-note"><span>Sports Betting (BM)</span><span>9:16</span></div>
+          <div class="creative-footer-note"><span>SG/MY — Worldcup Traffic</span><span>9:16</span></div>
         </div>
       </div>
 
@@ -853,8 +881,8 @@
             <span class="creative-tag country">🇲🇾 Malaysia</span>
             <span class="creative-tag">Slots Promo</span>
           </div>
-          <p class="creative-desc">188 free spins offer for our top Slots campaign. <strong>Rejected once, reuploaded</strong> — now pending review.</p>
-          <div class="creative-footer-note"><span>Slots Promo (BM)</span><span>3:4</span></div>
+          <p class="creative-desc">188 free spins offer, separate Slots promo. <strong>Rejected once, reuploaded</strong> — now pending review.</p>
+          <div class="creative-footer-note"><span>Slots Promo (not in this export)</span><span>3:4</span></div>
         </div>
       </div>
 
@@ -870,8 +898,8 @@
             <span class="creative-tag country">🇲🇾 MY · 🇸🇬 SG</span>
             <span class="creative-tag">Cross-Market</span>
           </div>
-          <p class="creative-desc">6-jersey giveaway, 5 winners. Shared promo across both markets. File not uploaded yet.</p>
-          <div class="creative-footer-note"><span>MY + SG</span><span>1:1</span></div>
+          <p class="creative-desc">6-jersey giveaway, 5 winners. This is what all 9 Jersey Traffic campaigns above are promoting. File not uploaded yet.</p>
+          <div class="creative-footer-note"><span>Linked to all 9 campaigns above</span><span>1:1</span></div>
         </div>
       </div>
 
@@ -883,7 +911,7 @@
     <div class="section-header">
       <h2 class="section-title">Challenges & Fixes</h2>
       <div class="section-line"></div>
-      <span class="section-count">7 ITEMS</span>
+      <span class="section-count">6 ITEMS</span>
     </div>
 
     <div class="issues-list">
@@ -894,68 +922,58 @@
           <h3 class="issue-row-title">Ad Account Restriction</h3>
           <span class="issue-tag risk">High Risk</span>
         </div>
-        <p class="issue-line problem"><span class="label">Problem:</span>Facebook can ban our account anytime — all 6 campaigns would stop instantly.</p>
-        <p class="issue-line fix"><span class="label">Fix:</span>Buy <strong>3–5 backup ad accounts</strong> and mirror our winning campaigns on them.</p>
+        <p class="issue-line problem"><span class="label">Problem:</span>Facebook can ban our account anytime — all 9 campaigns would stop instantly.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Buy <strong>3–5 backup ad accounts</strong> and mirror our live campaigns on them.</p>
       </div>
 
       <div class="issue-row">
         <div class="issue-row-head">
           <span class="issue-num">02</span>
-          <h3 class="issue-row-title">Welcome Bonus Losing Money</h3>
-          <span class="issue-tag risk">Losing Money</span>
+          <h3 class="issue-row-title">Duplicate Campaign Names</h3>
+          <span class="issue-tag risk">Confusing</span>
         </div>
-        <p class="issue-line problem"><span class="label">Problem:</span>ROAS dropped to <strong>0.74x</strong> (-34%) — this campaign now loses money.</p>
-        <p class="issue-line fix"><span class="label">Fix:</span><strong>Pause it</strong>, refresh the creative, move budget to Slots Promo instead.</p>
+        <p class="issue-line problem"><span class="label">Problem:</span><strong>4 campaigns</strong> share near-identical names (two "Jersey (BM)", two "+RM150") — impossible to tell apart in reports.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Add a unique tag (audience or date) to every campaign name from now on.</p>
       </div>
 
       <div class="issue-row">
         <div class="issue-row-head">
           <span class="issue-num">03</span>
-          <h3 class="issue-row-title">Sports Betting Slowing Down</h3>
-          <span class="issue-tag warn">Declining</span>
+          <h3 class="issue-row-title">Most Spend Has No Registration Data</h3>
+          <span class="issue-tag warn">Data Gap</span>
         </div>
-        <p class="issue-line problem"><span class="label">Problem:</span>ROAS fell from 2.54x to <strong>2.34x</strong> as broad targeting runs out of cheap reach.</p>
-        <p class="issue-line fix"><span class="label">Fix:</span>Switch to a Lookalike audience and launch our <strong>World Cup creative</strong>.</p>
+        <p class="issue-line problem"><span class="label">Problem:</span><strong>5 of 9 campaigns</strong> (RM656 spend) show zero tracked leads — we can't tell if they're working.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Add lead tracking to every active campaign, not just some.</p>
       </div>
 
       <div class="issue-row">
         <div class="issue-row-head">
           <span class="issue-num">04</span>
-          <h3 class="issue-row-title">Singapore Costs Too High</h3>
-          <span class="issue-tag warn">Expensive</span>
+          <h3 class="issue-row-title">Two Dead Campaigns Still Listed</h3>
+          <span class="issue-tag warn">Cleanup Needed</span>
         </div>
-        <p class="issue-line problem"><span class="label">Problem:</span>SG costs <strong>40% more</strong> per result than Malaysia (RM31.61 vs RM22.54).</p>
-        <p class="issue-line fix"><span class="label">Fix:</span>Build SG-specific ads with <strong>SGD pricing</strong> and local payment methods.</p>
+        <p class="issue-line problem"><span class="label">Problem:</span>One archived (RM0.47) and one inactive (RM62.72) campaign are still cluttering the report.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Remove dead campaigns from reporting and reallocate their budget.</p>
       </div>
 
       <div class="issue-row">
         <div class="issue-row-head">
           <span class="issue-num">05</span>
-          <h3 class="issue-row-title">Ad Creatives Are Fatigued</h3>
-          <span class="issue-tag warn">Fatigue</span>
+          <h3 class="issue-row-title">BM Creative Converts Best</h3>
+          <span class="issue-tag warn">Opportunity</span>
         </div>
-        <p class="issue-line problem"><span class="label">Problem:</span>Same ads running <strong>3+ weeks</strong> — performance is fading.</p>
-        <p class="issue-line fix"><span class="label">Fix:</span>Produce <strong>5 new creatives weekly</strong>, rotate every 7–10 days.</p>
+        <p class="issue-line problem"><span class="label">Problem:</span>The Chinese-language ad costs <strong>RM218.88</strong> per lead — over 4x the Bahasa Malaysia ad at <strong>RM50.28</strong>.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Shift more budget into the BM creative — it's the proven winner.</p>
       </div>
 
       <div class="issue-row">
         <div class="issue-row-head">
           <span class="issue-num">06</span>
-          <h3 class="issue-row-title">Incomplete Tracking</h3>
-          <span class="issue-tag warn">Data Gap</span>
+          <h3 class="issue-row-title">High Cost Per Registration</h3>
+          <span class="issue-tag warn">Expensive</span>
         </div>
-        <p class="issue-line problem"><span class="label">Problem:</span>WhatsApp registrations aren't fully tracked — real ROAS may be higher than reported.</p>
-        <p class="issue-line fix"><span class="label">Fix:</span>Set up <strong>Conversions API</strong> and upload deposit data weekly.</p>
-      </div>
-
-      <div class="issue-row">
-        <div class="issue-row-head">
-          <span class="issue-num">07</span>
-          <h3 class="issue-row-title">Landing Page Drop-Off</h3>
-          <span class="issue-tag warn">Wasted Spend</span>
-        </div>
-        <p class="issue-line problem"><span class="label">Problem:</span><strong>35–40%</strong> of ad clicks never finish registration.</p>
-        <p class="issue-line fix"><span class="label">Fix:</span>Speed up the page, simplify the form, add trust badges.</p>
+        <p class="issue-line problem"><span class="label">Problem:</span>Blended cost is <strong>RM147.46</strong> per registration — too high for a traffic campaign.</p>
+        <p class="issue-line fix"><span class="label">Fix:</span>Tighten targeting and add a clearer registration call-to-action.</p>
       </div>
 
     </div>
@@ -1020,10 +1038,10 @@
         </div>
         <div class="optim-phase-body">
           <ul class="phase-list">
-            <li><strong>Raise budgets slowly</strong> — +20% every 3 days on campaigns above 2.5x ROAS.</li>
+            <li><strong>Shift budget to BM</strong> — move spend from the weak CN ad into the proven BM creative.</li>
             <li><strong>Copy winners</strong> — bring top ads into new markets and audiences.</li>
             <li><strong>70/20/10 budget split</strong> — winners / testing / new ideas.</li>
-            <li><strong>Spread spend</strong> — split across accounts once weekly spend passes RM15,000.</li>
+            <li><strong>Spread spend</strong> — split across accounts as weekly budget grows.</li>
           </ul>
         </div>
       </div>
@@ -1041,7 +1059,7 @@
           <ul class="phase-list">
             <li><strong>Retarget drop-offs</strong> — re-engage people who clicked but didn't convert.</li>
             <li><strong>Fast replies</strong> — answer WhatsApp messages within 5 minutes.</li>
-            <li><strong>New platforms</strong> — test TikTok & Google once Facebook hits 3.0x ROAS.</li>
+            <li><strong>New platforms</strong> — test TikTok & Google once registration tracking is reliable.</li>
             <li><strong>Weekly check-in</strong> — review numbers every Monday, adjust fast.</li>
           </ul>
         </div>
@@ -1096,19 +1114,19 @@
       </div>
       <div class="priority-row">
         <span class="priority-rank">P3</span>
-        <p class="priority-text"><strong>Scale Slots Promo</strong> — our top performer at 3.12x.</p>
+        <p class="priority-text"><strong>Rename duplicate campaigns</strong> — 4 campaigns share confusing names.</p>
       </div>
       <div class="priority-row">
         <span class="priority-rank">P4</span>
-        <p class="priority-text"><strong>Refresh creatives</strong> — new videos + World Cup angle.</p>
+        <p class="priority-text"><strong>Shift budget to BM creative</strong> — 4x cheaper per lead than CN.</p>
       </div>
       <div class="priority-row">
         <span class="priority-rank">P5</span>
-        <p class="priority-text"><strong>Fix Singapore costs</strong> — launch SGD-specific ads.</p>
+        <p class="priority-text"><strong>Remove dead campaigns</strong> — clean up archived and inactive entries.</p>
       </div>
       <div class="priority-row">
         <span class="priority-rank">P6</span>
-        <p class="priority-text"><strong>Keep Welcome Bonus paused</strong> — move its budget to winners.</p>
+        <p class="priority-text"><strong>Lower cost per registration</strong> — tighten targeting, clearer CTA.</p>
       </div>
     </div>
   </section>

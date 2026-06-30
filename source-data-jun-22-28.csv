@@ -1,0 +1,10 @@
+"Reporting starts","Reporting ends","Campaign name","Campaign delivery",Results,"Result indicator","Cost per results","Ad set budget","Ad set budget type","Amount spent (MYR)",Impressions,Reach,Ends,"Website leads","Clicks (all)","CPC (all) (MYR)","CTR (link click-through rate)","Website landing page views","Cost per landing page view (MYR)",Leads
+2026-06-22,2026-06-28,"1. SG Traffic Worldcup (EN)",archived,1,actions:link_click,0.47,100,Daily,0.47,23,23,2026-06-22,,0,0,4.347826,1,0.47,
+2026-06-22,2026-06-28,"4. SG Traffic Worldcup Jersey (EN)",active,256,actions:omni_landing_page_view,1.00777344,60,Daily,257.99,10583,8275,2026-07-20,,345,0.747797,2.863082,256,1.007773,
+2026-06-22,2026-06-28,"4. SG Traffic Worldcup Jersey (BM)",active,115,actions:omni_landing_page_view,1.74878261,60,Daily,201.11,6428,5063,2026-07-20,4,218,0.922523,2.069073,115,1.748783,4
+2026-06-22,2026-06-28,"4. SG Traffic Worldcup Jersey (CN)",active,125,actions:omni_landing_page_view,1.75104,60,Daily,218.88,5578,3587,2026-07-20,1,215,1.018047,2.707063,125,1.75104,1
+2026-06-22,2026-06-28,"4. SG Traffic Worldcup Jersey (BM)",active,121,actions:omni_landing_page_view,1.6168595,60,Daily,195.64,5240,3650,2026-07-20,,202,0.968515,2.767176,121,1.61686,
+2026-06-22,2026-06-28,"4. (MYCN) Traffic Worldcup Jersey +RM150",active,392,actions:omni_landing_page_view,0.35492347,150,Daily,139.13,11962,9746,2026-07-20,,644,0.21604,3.88731,392,0.354923,
+2026-06-22,2026-06-28,"4. SG Traffic Worldcup Jersey (i88Asia) +RM100",inactive,57,actions:omni_landing_page_view,1.10035088,100,Daily,62.72,1697,1550,2026-07-20,,90,0.696889,3.712434,57,1.100351,
+2026-06-22,2026-06-28,"4. SG Traffic Worldcup Jersey +RM150",active,263,actions:omni_landing_page_view,1.30505703,150,Daily,343.23,11465,8575,2026-07-20,4,416,0.825072,2.982992,263,1.305057,4
+2026-06-22,2026-06-28,"4. SG Traffic Worldcup Jersey +RM150",active,204,actions:omni_landing_page_view,1.71730392,150,Daily,350.33,15899,12009,2026-07-20,3,297,1.179562,1.48437,204,1.717304,3
